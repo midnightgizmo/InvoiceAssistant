@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="InvoiceAssistant.UI.AddInvoice.AddPayment"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InvoiceAssistant.UI.AddInvoice"
+             mc:Ignorable="d" Background="Transparent"
+             d:DesignHeight="300" d:DesignWidth="300">
+    
+    <UserControl.Resources>
+        <Style  TargetType="TextBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="myBorder"
+                            Background="{TemplateBinding Background}"                             
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="11">
+
+                            <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"
+                                          Margin="10,0,0,0"/>
+
+                        </Border>
+                        
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="buttonAddStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="#165289" BorderBrush="White" BorderThickness="1" CornerRadius="6">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                                <Canvas Width="21.6567" Height="21.6567" Margin="0,0,10,0">
+                                    <Path Width="21.6567" Height="21.6567" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Data="F1 M 10.8284,0C 16.8088,0 21.6567,4.84802 21.6567,10.8284C 21.6567,16.8087 16.8088,21.6567 10.8284,21.6567C 4.84802,21.6567 0,16.8087 0,10.8284C 0,4.84802 4.84802,0 10.8284,0 Z ">
+                                        <Path.Fill>
+                                            <RadialGradientBrush RadiusX="0.770991" RadiusY="0.770991" Center="0.21038,0.186673" GradientOrigin="0.21038,0.186673">
+                                                <RadialGradientBrush.GradientStops>
+                                                    <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                                    <GradientStop Color="#FF009800" Offset="1"/>
+                                                </RadialGradientBrush.GradientStops>
+                                                <RadialGradientBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <RotateTransform CenterX="0.21038" CenterY="0.186673" Angle="49.2077"/>
+                                                    </TransformGroup>
+                                                </RadialGradientBrush.RelativeTransform>
+                                            </RadialGradientBrush>
+                                        </Path.Fill>
+                                    </Path>
+                                    <Path Width="15.2155" Height="15.2343" Canvas.Left="2.75729" Canvas.Top="3.64126" Stretch="Fill" StrokeThickness="0.133317" StrokeLineJoin="Round" Stroke="#FF002E61" Fill="#FFFFFFFF" Data="F1 M 12.0759,12.9234L 12.0759,17.736C 12.0784,17.9099 12.0808,18.0837 11.8066,18.3076C 11.5326,18.5316 10.9822,18.8055 10.4258,18.8088C 9.86963,18.8121 9.30786,18.5447 9.02576,18.3208C 8.74365,18.0969 8.74146,17.9164 8.73914,17.736L 8.72437,12.937L 3.89685,12.9506C 3.72302,12.9531 3.54907,12.9555 3.3252,12.6815C 3.10132,12.4074 2.82715,11.8569 2.82397,11.3007C 2.82068,10.7445 3.08813,10.1826 3.31201,9.90057C 3.53589,9.61853 3.71631,9.61621 3.89685,9.61389L 8.70215,9.60364L 8.69482,4.78076C 8.69238,4.60693 8.68994,4.43311 8.96411,4.20917C 9.23816,3.98523 9.78857,3.71124 10.345,3.70795C 10.9011,3.70465 11.4629,3.97205 11.745,4.19598C 12.0271,4.41986 12.0293,4.60034 12.0316,4.78076L 12.0261,9.59735L 16.8333,9.60132C 17.0072,9.59888 17.181,9.59644 17.4048,9.87048C 17.6288,10.1445 17.9028,10.6951 17.9061,11.2513C 17.9094,11.8075 17.642,12.3693 17.4182,12.6514C 17.1942,12.9335 17.0137,12.9358 16.8333,12.9381L 12.0208,12.9381"/>
+                                </Canvas>
+
+                                <TextBlock x:Name="theText" Text="{TemplateBinding Content}" FontSize="20" Foreground="White" />
+                            </StackPanel>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="theText" Property="Foreground" Value="Yellow" />
+                            </Trigger>
+
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter  TargetName="border" Property="Background" Value="#4C90C3" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Border Margin="0,0,0,10" Background="#339AA8" CornerRadius="25">
+            <Border.Effect>
+                <BlurEffect Radius="25"/>
+            </Border.Effect>
+        </Border>
+        <TextBlock FontSize="36" Foreground="#FFC800" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,10">Payment Break Down</TextBlock>
+        <Border Background="#2D75A2" CornerRadius="17" Padding="15" Grid.Row="1" Margin="20,0,20,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="auto"/>
+                
+                    <RowDefinition Height="10 "/>
+
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="auto"/>
+
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="auto"/>
+
+                </Grid.RowDefinitions>
+            
+                <TextBlock Text="Description" FontSize="20" Foreground="White" Grid.Row="0" />
+                <TextBox Name="txtDescriptionAdd" Grid.Row="2" FontSize="20" />
+
+                <TextBlock Text="Ammount" FontSize="20" Foreground="White" Grid.Row="4" />
+                <TextBox Name="txtAmmountAdd" Grid.Row="6" FontSize="20" />
+
+                <Button Name="cmdAddNew" Content="Add"  Margin="0" Grid.Row="8" Width="100" Height="30" Style="{StaticResource buttonAddStyle}" Click="cmdAddNew_Click" />
+            </Grid>
+        </Border>
+        
+        <local:PaymentsGrid x:Name="paymentGrid" Grid.Row="2" Margin="0,20,0,0" />
+        
+    </Grid>
+</UserControl>
+
+    
+    

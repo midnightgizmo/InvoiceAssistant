@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="InvoiceAssistant.UI.AddInvoice.Invoice"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InvoiceAssistant.UI.AddInvoice"
+             mc:Ignorable="d" 
+             d:DesignHeight="838" d:DesignWidth="762">
+    <UserControl.Resources>
+        <Style x:Key="buttonBackStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="#6BB62C">
+                            <Canvas Width="49.9769" Height="49.9769">
+                                <Path x:Name="pathBorder" Width="49.9769" Height="49.9769" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" StrokeThickness="4" StrokeLineJoin="Round" Stroke="#FFFFFFFF" Data="F1 M 24.9884,2C 37.6846,2 47.9769,12.2924 47.9769,24.9885C 47.9769,37.6847 37.6847,47.9769 24.9884,47.9769C 12.2922,47.9769 2,37.6847 2,24.9885C 2,12.2924 12.2924,2 24.9884,2 Z "/>
+                                <Path x:Name="pathArrow" Width="35.3109" Height="33.4685" Canvas.Left="8.07806" Canvas.Top="7.75913" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 23.6881,40.9795C 24.6719,41.1987 25.6556,41.418 26.585,40.9528C 27.5144,40.4877 28.3893,39.3383 28.8241,38.5668C 29.2592,37.7953 29.254,37.4019 29.2566,36.954C 29.2592,36.5061 29.2695,36.0039 29.2213,35.5371C 29.1729,35.0703 29.0658,34.6388 28.9589,34.2074L 24.4232,29.299L 40.1166,29.2783C 40.7723,29.0988 41.4281,28.9193 41.9667,28.3533C 42.5052,27.7872 42.9263,26.8345 43.3475,25.8819L 43.3889,22.9617C 42.9781,22.097 42.5674,21.2323 42.0073,20.7017C 41.4473,20.171 40.7378,19.9742 40.0284,19.7776L 24.3716,19.7153L 28.985,14.7396C 29.3369,13.6869 29.689,12.6341 29.1936,11.395C 28.6981,10.1558 27.3556,8.73022 26.3518,8.13477C 25.3483,7.53931 24.6838,7.77405 24.0194,8.00867L 8.54895,22.713C 8.32068,23.2311 8.09265,23.7494 8.07874,24.2949C 8.06494,24.8401 8.2655,25.4128 8.46606,25.9854L 23.6881,40.9795 Z "/>
+                            </Canvas>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="pathBorder" Property="Stroke" Value="Yellow" />
+                                <Setter TargetName="pathArrow" Property="Fill" Value="Yellow" />
+                            </Trigger>
+
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter  TargetName="pathBorder" Property="Stroke" Value="#E7E7E7" />
+                                <Setter  TargetName="pathArrow" Property="Fill" Value="#E7E7E7" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="buttonNewInvoiceStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="8" Background="#C0461F" Padding="15,5,15,7" BorderBrush="White" BorderThickness="2">
+                            <TextBlock Foreground="White" FontSize="20" FontStyle="Italic" Text="{TemplateBinding Content}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Name="theGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="76" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#6BB62C">
+            <Grid>
+                <Button Name="cmdBack" Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Style="{StaticResource buttonBackStyle}" Click="cmdBack_Click" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Margin="0,0,0,0" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Arial" FontSize="18" FontWeight="Bold">Add Invoice</TextBlock>
+                    <Path Margin="30,0,20,0" Width="35.3" Height="35.3441" Canvas.Left="2230.44" Canvas.Top="524.08" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 2252.1,545.649L 2252.1,556.913C 2252.1,557.319 2252.11,557.726 2251.47,558.25C 2250.82,558.775 2249.54,559.416 2248.23,559.424C 2246.93,559.431 2245.62,558.805 2244.96,558.281C 2244.3,557.757 2244.29,557.335 2244.29,556.913L 2244.25,545.68L 2232.95,545.712C 2232.55,545.718 2232.14,545.724 2231.61,545.082C 2231.09,544.441 2230.45,543.152 2230.44,541.851C 2230.43,540.549 2231.06,539.234 2231.58,538.574C 2232.11,537.913 2232.53,537.908 2232.95,537.903L 2244.2,537.879L 2244.18,526.591C 2244.18,526.184 2244.17,525.777 2244.81,525.253C 2245.45,524.729 2246.74,524.087 2248.04,524.08C 2249.35,524.072 2250.66,524.698 2251.32,525.222C 2251.98,525.746 2251.99,526.168 2251.99,526.591L 2251.98,537.864L 2263.23,537.873C 2263.64,537.867 2264.04,537.862 2264.57,538.503C 2265.09,539.145 2265.73,540.433 2265.74,541.735C 2265.75,543.037 2265.12,544.352 2264.6,545.012C 2264.07,545.672 2263.65,545.677 2263.23,545.683L 2251.97,545.683"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+
+        <Border Grid.Row="1">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.436803,-0.00131242" EndPoint="0.436803,1.00262">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="#FF065C9E" Offset="0"/>
+                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Border.Background>
+
+        </Border>
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"  x:Name="columnTwo" />
+            </Grid.ColumnDefinitions>
+
+            <!--<Button Content="New Invoice" Margin="0,70,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Style="{StaticResource buttonNewInvoiceStyle}" />-->
+            <!--<TextBlock FontSize="36" Foreground="#FFC800" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0">Main Details</TextBlock>-->
+
+            <!--<Line X1="0" Y1="0" X2="0" Y2="1" Stretch="Fill" Stroke="#96C4EE" StrokeThickness="1" HorizontalAlignment="Right" />-->
+
+            <local:MainDetails x:Name="mainDetails"  Margin="0,50,0,0" Padding="20,0,20,0"  />
+            
+            <local:AddPayment x:Name="addPayment" Grid.Column="1" Margin="0,50,0,0" Padding="20,0,20,0" VerticalAlignment="Top"  />
+            
+            <Border Name="borderPayment" Grid.Column="1">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0.436803,-0.00131235" EndPoint="0.436803,1.00262">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="#E2065C9E" Offset="0"/>
+                            <GradientStop Color="#E2FFFFFF" Offset="1"/>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+        </Grid>
+        
+        
+
+    </Grid>
+</UserControl>

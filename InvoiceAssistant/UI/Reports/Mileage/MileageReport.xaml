@@ -1,0 +1,229 @@
+﻿<UserControl x:Class="InvoiceAssistant.UI.Reports.Mileage.MileageReport"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="900">
+    
+    <UserControl.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\..\Templates\DropDownList.xaml" />
+                
+                <ResourceDictionary>
+                    <Style x:Key="buttonBackStyle" TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="#186C9D">
+                                        <Canvas Width="49.9769" Height="49.9769">
+                                            <Path x:Name="pathBorder" Width="49.9769" Height="49.9769" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" StrokeThickness="4" StrokeLineJoin="Round" Stroke="#FFFFFFFF" Data="F1 M 24.9884,2C 37.6846,2 47.9769,12.2924 47.9769,24.9885C 47.9769,37.6847 37.6847,47.9769 24.9884,47.9769C 12.2922,47.9769 2,37.6847 2,24.9885C 2,12.2924 12.2924,2 24.9884,2 Z "/>
+                                            <Path x:Name="pathArrow" Width="35.3109" Height="33.4685" Canvas.Left="8.07806" Canvas.Top="7.75913" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 23.6881,40.9795C 24.6719,41.1987 25.6556,41.418 26.585,40.9528C 27.5144,40.4877 28.3893,39.3383 28.8241,38.5668C 29.2592,37.7953 29.254,37.4019 29.2566,36.954C 29.2592,36.5061 29.2695,36.0039 29.2213,35.5371C 29.1729,35.0703 29.0658,34.6388 28.9589,34.2074L 24.4232,29.299L 40.1166,29.2783C 40.7723,29.0988 41.4281,28.9193 41.9667,28.3533C 42.5052,27.7872 42.9263,26.8345 43.3475,25.8819L 43.3889,22.9617C 42.9781,22.097 42.5674,21.2323 42.0073,20.7017C 41.4473,20.171 40.7378,19.9742 40.0284,19.7776L 24.3716,19.7153L 28.985,14.7396C 29.3369,13.6869 29.689,12.6341 29.1936,11.395C 28.6981,10.1558 27.3556,8.73022 26.3518,8.13477C 25.3483,7.53931 24.6838,7.77405 24.0194,8.00867L 8.54895,22.713C 8.32068,23.2311 8.09265,23.7494 8.07874,24.2949C 8.06494,24.8401 8.2655,25.4128 8.46606,25.9854L 23.6881,40.9795 Z "/>
+                                        </Canvas>
+                                    </Border>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="pathBorder" Property="Stroke" Value="Yellow" />
+                                            <Setter TargetName="pathArrow" Property="Fill" Value="Yellow" />
+                                        </Trigger>
+
+
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter  TargetName="pathBorder" Property="Stroke" Value="#E7E7E7" />
+                                            <Setter  TargetName="pathArrow" Property="Fill" Value="#E7E7E7" />
+                                        </Trigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+
+                    <Style x:Key="moneyTextBoxStyle"  TargetType="TextBox">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TextBox">
+                                    <Border x:Name="myBorder"
+                            Background="{TemplateBinding Background}"                             
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="11">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="£" FontSize="15pt" VerticalAlignment="Center" Margin="10,0,0,0" />
+                                            <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                                        </StackPanel>
+
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                </ResourceDictionary>
+                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+
+
+
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="76" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#186C9D">
+            <Grid>
+                <Button Name="cmdBack" Content="Reports Menu" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Style="{StaticResource buttonBackStyle}" Click="cmdBack_Click" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Margin="0,0,0,0" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Arial" FontSize="18" FontWeight="Bold">Mileage Report</TextBlock>
+
+
+                    <Canvas Margin="20,0,20,0" Width="45.5054" Height="62.4006">
+                        <Path Width="18.4082" Height="19.1314" Canvas.Left="21.3312" Canvas.Top="36.9236" Stretch="Fill" Data="F1 M 21.3312,36.9236L 25.8097,36.9241C 25.1334,37.5703 24.457,38.2166 24.0084,38.9102C 23.5601,39.6038 23.3395,40.3455 23.119,41.0869L 24.3805,48.241C 24.9164,49.2878 25.4523,50.335 26.1559,51.0889C 26.8597,51.843 27.7313,52.304 28.9688,52.3494C 30.2061,52.3945 31.8092,52.0242 33.2046,51.4707C 34.5997,50.9172 35.7871,50.1809 36.7367,49.0916C 37.6862,48.0022 38.3978,46.5596 39.1094,45.1169L 39.7394,53.1726C 38.4067,53.583 37.0742,53.9934 35.5562,54.3928C 34.038,54.7922 32.3345,55.1807 30.631,55.5686C 28.7574,55.8113 26.8839,56.0537 25.8822,56.0549C 24.8804,56.0559 24.7501,55.8154 24.62,55.575L 21.3312,36.9236 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.318031,0.716533" EndPoint="0.839976,0.716533">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.318031" CenterY="0.716533" AngleX="2.19799" AngleY="0"/>
+                                            <RotateTransform CenterX="0.318031" CenterY="0.716533" Angle="133.625"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#FFCBCBCB" Offset="0"/>
+                                        <GradientStop Color="#FF3B3B3B" Offset="0.986301"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path Width="25.8969" Height="22.8809" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" StrokeThickness="0.5" StrokeLineJoin="Round" Stroke="#FF000000" Data="F1 M 2.21936,0.25C 6.19177,2.35962 10.1641,4.46948 13.1396,6.40356C 16.1151,8.33765 18.0936,10.0964 20.0121,12.2607C 21.9305,14.425 23.7886,16.9954 25.6469,19.5657L 21.7089,22.6309C 20.2064,20.0859 18.7037,17.5408 17.0209,15.4666C 15.3379,13.3923 13.4745,11.7891 11.6112,10.1855C 9.953,9.24878 8.29492,8.31152 6.40149,7.28418C 4.50793,6.25708 2.37903,5.13965 0.25,4.02222C 0.470581,3.28052 0.69104,2.53931 1.01941,1.9104C 1.34753,1.28198 1.78357,0.765869 2.21936,0.25 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.519964,0.513134" EndPoint="0.684927,0.513134">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.519964" CenterY="0.513134" AngleX="-6.99628" AngleY="0"/>
+                                            <RotateTransform CenterX="0.519964" CenterY="0.513134" Angle="-55.7155"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#FFC0C0C0" Offset="0"/>
+                                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path Width="5.80177" Height="4.91139" Canvas.Left="21.1225" Canvas.Top="18.8318" Stretch="Fill" Fill="#FF3F3F3F" Data="F1 M 21.4083,22.4207L 25.5568,19.0547C 25.7972,18.9246 26.0377,18.7942 26.2656,18.8418C 26.4937,18.8894 26.709,19.115 26.9243,19.3406L 21.3781,23.7432C 21.2479,23.5027 21.1177,23.262 21.1227,23.0417C 21.1278,22.8213 21.2681,22.6208 21.4083,22.4207 Z "/>
+                        <Path Width="25.2901" Height="34.8585" Canvas.Left="20.1717" Canvas.Top="19.2406" Stretch="Fill" StrokeThickness="0.2" StrokeLineJoin="Round" Stroke="#FF000000" Data="F1 M 21.3781,23.7432L 26.9243,19.3406C 27.3402,19.7061 27.7559,20.072 28.2843,20.3301C 28.8129,20.5879 29.4541,20.7383 30.0577,20.6758C 30.6615,20.6133 31.2275,20.3379 31.7936,20.0625C 32.1744,19.7317 32.5552,19.4014 33.0812,19.3965C 33.6073,19.3914 34.2784,19.7122 34.9523,20.2959C 35.626,20.8796 36.3021,21.7263 37.0811,22.9063C 37.8599,24.0859 38.7413,25.5989 39.6227,27.1121C 40.0184,28.3596 40.4139,29.6072 40.8999,29.8728C 41.3857,30.1384 41.9619,29.4219 42.5656,29.3594C 43.1693,29.2969 43.8004,29.8879 44.1986,30.6521C 44.5968,31.416 44.7621,32.3528 44.9272,33.2898C 44.8369,34.2717 44.7466,35.2537 44.4766,35.9111C 44.2064,36.5691 43.7567,36.9026 43.3068,37.2363C 42.9801,37.4785 42.6533,37.7209 42.5029,37.968C 42.3525,38.2148 42.3785,38.4666 42.411,38.7754C 42.4434,39.084 42.4819,39.45 42.5327,39.9187C 42.5836,40.3877 42.6466,40.9597 42.7368,41.7034C 42.8271,42.4475 42.9447,43.3635 43.0952,44.0544C 43.2457,44.7451 43.4297,45.2107 43.5992,45.5664C 43.7689,45.9221 43.9244,46.168 44.058,46.3577C 44.1914,46.5479 44.3029,46.6816 44.3794,46.8669C 44.4561,47.0525 44.4977,47.2888 44.5394,47.5254L 45.3203,51.9539C 45.3486,52.115 45.3771,52.2756 45.3525,52.3933C 45.328,52.5107 45.2504,52.585 45.1729,52.6589C 44.7994,53.0156 44.4261,53.3723 44.1802,53.5544C 43.9342,53.7366 43.8159,53.7441 43.6974,53.7517L 39.9883,53.989C 39.7802,54.0022 39.5718,54.0156 39.458,53.9363C 39.3442,53.8567 39.3247,53.6846 39.3013,53.4695C 39.2778,53.2542 39.2501,52.9961 39.2157,52.6521C 39.1813,52.3083 39.1401,51.8782 39.0928,51.2351C 39.0454,50.592 38.9918,49.7356 38.9987,48.46C 39.0055,47.1843 39.0724,45.4893 39.016,44.1309C 38.9594,42.7722 38.7792,41.7502 38.5363,40.8711C 38.2935,39.9919 37.9879,39.2551 37.6825,38.5188C 37.4672,38.2932 37.2516,38.0681 36.9448,37.9463C 36.6381,37.825 36.2397,37.8074 35.7545,37.7881C 35.2694,37.7686 34.6974,37.7473 33.9767,37.7283C 33.2562,37.709 32.3872,37.6914 31.3369,37.718C 30.2866,37.7449 29.0552,37.8154 28.4081,37.793C 27.7609,37.7705 27.6981,37.6545 27.6329,37.5344C 27.5679,37.4141 27.5004,37.2893 27.433,37.1648L 21.1207,37.2239C 20.8102,35.9617 20.4999,34.6992 20.3593,33.7361C 20.2188,32.7727 20.248,32.1091 20.4425,31.3796C 20.6372,30.6501 20.9971,29.8547 21.3195,29.1721C 21.6417,28.49 21.9268,27.9199 22.2684,27.4573C 22.61,26.9944 23.0083,26.6389 23.0522,26.3328C 23.0962,26.0264 22.7856,25.7695 22.4751,25.5125L 21.3781,23.7432 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.324586,0.981114" EndPoint="1.51517,0.981114">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.324586" CenterY="0.981114" AngleX="15.607" AngleY="0"/>
+                                            <RotateTransform CenterX="0.324586" CenterY="0.981114" Angle="-52.4517"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#FF12462C" Offset="0"/>
+                                        <GradientStop Color="#FF158550" Offset="0.525114"/>
+                                        <GradientStop Color="#FF25AB6D" Offset="0.744292"/>
+                                        <GradientStop Color="#FF00703D" Offset="0.995434"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path Width="8.37971" Height="14.293" Canvas.Left="23.6152" Canvas.Top="38.2166" Stretch="Fill" Fill="#FFA4A4A2" Data="F1 M 26.8898,52.0134L 28.558,52.5095C 29.7505,50.8064 30.943,49.1033 31.5394,47.6299C 32.1357,46.1563 32.1359,44.9121 31.6027,43.8596C 31.0695,42.8074 30.0031,41.9463 28.9811,41.2556C 27.9594,40.5652 26.9819,40.0447 26.2355,39.5664C 25.4889,39.0881 24.973,38.6523 24.457,38.2166L 23.6152,39.4187C 24.4589,39.8796 25.3024,40.3408 26.1239,40.7666C 26.9454,41.1926 27.745,41.5833 28.3451,41.9192C 28.9452,42.2549 29.3458,42.5354 29.7559,42.9451C 30.1659,43.3545 30.5853,43.8926 30.8331,44.5515C 31.0811,45.2102 31.1573,45.9895 30.4716,47.2532C 29.7858,48.5168 28.3378,50.2654 26.8898,52.0134 Z "/>
+                        <Path Width="5.27405" Height="8.5741" Canvas.Left="39.619" Canvas.Top="53.7292" Stretch="Fill" Data="F1 M 40.5497,62.25C 41.2609,62.3 41.9725,62.3506 42.6963,62.2227C 43.4203,62.095 44.1566,61.7898 44.8931,61.4841L 44.0526,53.7292C 43.2711,53.7791 42.4896,53.8291 41.7506,53.8713C 41.0117,53.9141 40.3154,53.949 39.619,53.9841L 40.5497,62.25 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.0362227,0.5481" EndPoint="0.986441,0.5481">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.0362227" CenterY="0.5481" AngleX="9.80837" AngleY="0"/>
+                                            <RotateTransform CenterX="0.0362227" CenterY="0.5481" Angle="-6.18779"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#FF000000" Offset="0.00456621"/>
+                                        <GradientStop Color="#FFA1A1A1" Offset="0.986301"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Canvas>
+
+
+
+
+
+
+
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.436803,-0.00131242" EndPoint="0.436803,1.00262">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="#FF065C9E" Offset="0"/>
+                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        
+        <Grid Grid.Row="1">
+            <Border Background="#002E49" Padding="10,10,10,10" Height="70" VerticalAlignment="Top">
+                <Grid>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Label Foreground="White" FontSize="20pt">Finacial Start Year</Label>
+                        <ComboBox Name="cbYear" Grid.Row="10" Grid.Column="1" FontSize="15pt" Margin="30 7 0 7" Style="{StaticResource cbSmallRoundedCornersStyle}" >
+                            <ComboBoxItem>2013</ComboBoxItem>
+                            <ComboBoxItem>2014</ComboBoxItem>
+                            <ComboBoxItem>2015</ComboBoxItem>
+                            <ComboBoxItem>2016</ComboBoxItem>
+                            <ComboBoxItem>2017</ComboBoxItem>
+                            <ComboBoxItem>2018</ComboBoxItem>
+                            <ComboBoxItem>2019</ComboBoxItem>
+                            <ComboBoxItem>2020</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label Foreground="White" FontSize="20pt" VerticalAlignment="Bottom">Mileage Allowance</Label>
+                        <Label Foreground="Yellow" FontSize="15pt" FontStyle="Italic" VerticalAlignment="Bottom" Margin="0,0,0,2">(Per Mile)</Label>
+                        <TextBox Name="txtMileageAllowance" Margin="5,10,10,0" Width="150" FontSize="15pt" Style="{StaticResource moneyTextBoxStyle}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Button Name="cmdCalculate" Content="Caculate" Click="cmdCalculate_Click" Margin="0,70,0,0" VerticalAlignment="Top" />
+
+
+            <StackPanel Name="spTotalMiles" Orientation="Horizontal" Margin="20,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden">
+                <Label FontSize="20pt" FontWeight="Bold" >Total Miles</Label>
+                <Label Name="lblTotalMiles" FontSize="20pt" Foreground="White" Margin="10,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel Name="spTotalAllowance" Orientation="Horizontal" Margin="400,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden">
+                <Label FontSize="20pt" FontWeight="Bold" >Allowance</Label>
+                <Label Name="lblAllowance" FontSize="20pt" Foreground="White" Margin="10,0,0,0"/>
+            </StackPanel>
+
+            <DataGrid Name="dgMilageResults" Margin="0,200,0,0" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Location" Binding="{Binding CompanyName}" />
+                    <DataGridTextColumn Header="Times Visited" Binding="{Binding NumberOfTimesVisited}" />
+                    <DataGridTextColumn Header="Total Miles" Binding="{Binding TotalMiles}" />
+                    <DataGridTextColumn Header="Allowance" Binding="{Binding TotalCostAllowanceForThisCompnay, ConverterCulture=en-GB, StringFormat=C}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+    </Grid>
+</UserControl>
+
+    

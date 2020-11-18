@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="InvoiceAssistant.UI.Address.AddressInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Background="Transparent"
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <Style  TargetType="TextBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="myBorder"
+                            Background="{TemplateBinding Background}"                             
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="11">
+
+                            <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"
+                                          Margin="10,0,0,0"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <StackPanel Grid.Column="1" Margin="20,20,20,0">
+
+
+            <Border Background="#342D75A2" CornerRadius="17" Padding="10,0,10,10" Margin="0,20,0,0">
+                <StackPanel>
+
+                    <TextBlock Foreground="White" FontSize="20" Margin="0,15,0,5">Company Name</TextBlock>
+                    <TextBox Name="txtCompanyName" FontSize="20" Margin="0,0,0,10" TextChanged="txtCompanyName_TextChanged"></TextBox>
+                    
+                    <TextBlock Foreground="White" FontSize="36" HorizontalAlignment="Center">Address</TextBlock>
+                    
+                    <TextBlock Foreground="White" FontSize="20" Margin="0,0,0,5">Line 1</TextBlock>
+                    <TextBox Name="txtAddress1" FontSize="20" Margin="0,0,0,10" TextChanged="txtAddress1_TextChanged"></TextBox>
+
+                    <TextBlock Foreground="White" FontSize="20" Margin="0,0,0,5">Line 2</TextBlock>
+                    <TextBox Name="txtAddress2" FontSize="20" Margin="0,0,0,10" TextChanged="txtAddress2_TextChanged"></TextBox>
+
+                    <TextBlock Foreground="White" FontSize="20" Margin="0,0,0,5">Line 3</TextBlock>
+                    <TextBox Name="txtAddress3" FontSize="20" Margin="0,0,0,10" TextChanged="txtAddress3_TextChanged"></TextBox>
+
+                    <TextBlock Foreground="White" FontSize="20" Margin="0,0,0,5">Line 4</TextBlock>
+                    <TextBox Name="txtAddress4" FontSize="20" Margin="0,0,0,10" TextChanged="txtAddress4_TextChanged"></TextBox>
+
+                    <TextBlock Foreground="White" FontSize="20" Margin="0,0,0,5">Line 5</TextBlock>
+                    <TextBox Name="txtAddress5" FontSize="20" Margin="0,0,0,10" TextChanged="txtAddress5_TextChanged"></TextBox>
+
+                </StackPanel>
+            </Border>
+
+            <Border Background="#4C2D75A2" CornerRadius="17" Margin="0,10,0,0">
+                <StackPanel>
+                    <TextBlock FontSize="30" FontFamily="Segoe UI" Foreground="White" HorizontalAlignment="Center">No Miles to address</TextBlock>
+                    <TextBox Name="txtMiles" FontSize="20" Margin="10,0,10,10" TextChanged="txtMiles_TextChanged"/>
+                </StackPanel>
+            </Border>
+            
+        </StackPanel>
+    </Grid>
+</UserControl>

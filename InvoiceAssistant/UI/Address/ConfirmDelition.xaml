@@ -1,0 +1,128 @@
+﻿<UserControl x:Class="InvoiceAssistant.UI.Address.ConfirmDelition"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Background="#CD000C52"
+             d:DesignHeight="300" d:DesignWidth="600">
+    
+    <UserControl.Resources>
+        <!-- Button Yes Style -->
+        <Style x:Key="buttonYesStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+
+
+                        <Border x:Name="theBorder" CornerRadius="6" Background="#4C90C3" BorderBrush="#FFFFFF" BorderThickness="1" Width="{TemplateBinding Width}" >
+                            <StackPanel Orientation="Horizontal">
+                                
+                                <Path Width="21.6194" Height="23.7969" Margin="10,0,0,0" Stretch="Fill" Fill="#FF64FF00" Data="F1 M -2513.92,429.168L -2509.49,435.097C -2507.37,430.414 -2505.25,425.732 -2503.24,422.741C -2501.24,419.75 -2499.35,418.451 -2497.45,417.151L -2496.47,422.136C -2497.68,423.489 -2498.9,424.842 -2501.07,427.977C -2503.23,431.113 -2506.34,436.03 -2509.46,440.948C -2510.67,439.441 -2511.89,437.934 -2513.33,436.575C -2514.77,435.215 -2516.43,434.004 -2518.08,432.792L -2513.92,429.168 Z "/>
+                                <TextBlock x:Name="theText" Margin="30,0,10,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="30" Foreground="White" Text="{TemplateBinding Content}" />
+                            </StackPanel>
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="theText" Property="Foreground" Value="Yellow" />
+                            </Trigger>
+
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter  TargetName="theBorder" Property="Background" Value="#162F5F" />
+                                <Setter  TargetName="theBorder" Property="BorderBrush" Value="Yellow" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Button No Style -->
+        <Style x:Key="buttonNoStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+
+
+                        <Border x:Name="theBorder" CornerRadius="6" Background="#4C90C3" BorderBrush="#FFFFFF" BorderThickness="1" Width="{TemplateBinding Width}" >
+                            <StackPanel Orientation="Horizontal">
+
+                                <Path Width="26.3726" Height="26.3726" Margin="10,0,0,0" Stretch="Fill" StrokeThickness="0" StrokeLineJoin="Round" Stroke="#FF000000" Data="M -2352.52,416.41C -2345.79,416.41 -2340.33,421.866 -2340.33,428.596C -2340.33,435.326 -2345.79,440.782 -2352.52,440.782C -2359.25,440.782 -2364.7,435.326 -2364.7,428.596C -2364.7,421.866 -2359.25,416.41 -2352.52,416.41 Z M -2359.52,424.215L -2347.79,435.594C -2349.07,436.392 -2350.59,436.853 -2352.22,436.853C -2356.86,436.853 -2360.63,433.086 -2360.63,428.439C -2360.63,426.907 -2360.22,425.47 -2359.52,424.215 Z M -2345.05,432.899L -2356.69,421.311C -2355.39,420.496 -2353.86,420.026 -2352.22,420.026C -2347.57,420.026 -2343.8,423.792 -2343.8,428.439C -2343.8,430.097 -2344.28,431.643 -2345.05,432.899 Z ">
+                                    <Path.Fill>
+                                        <LinearGradientBrush StartPoint="0.154362,0.141776" EndPoint="0.855294,0.844462">
+                                            <LinearGradientBrush.GradientStops>
+                                                <GradientStop Color="#FFFF0000" Offset="0"/>
+                                                <GradientStop Color="#FFAE0505" Offset="0.677725"/>
+                                                <GradientStop Color="#FF5D0A0A" Offset="1"/>
+                                            </LinearGradientBrush.GradientStops>
+                                        </LinearGradientBrush>
+                                    </Path.Fill>
+                                </Path>
+ 
+                                <TextBlock x:Name="theText" Margin="10,0,10,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="30" Foreground="White" Text="{TemplateBinding Content}" />
+                            </StackPanel>
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="theText" Property="Foreground" Value="Yellow" />
+                            </Trigger>
+
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter  TargetName="theBorder" Property="Background" Value="#162F5F" />
+                                <Setter  TargetName="theBorder" Property="BorderBrush" Value="Yellow" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+    <Border Height="150" VerticalAlignment="Center">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="46" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Border Background="#023454">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" FontSize="30" Foreground="White">Delete Address?</TextBlock>
+                    <Canvas Width="40.9301" Height="35.8353" HorizontalAlignment="Right" Margin="0,0,10,0">
+                        <Path Width="40.9301" Height="35.8353" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="#FFA61A18" Data="F1 M 4,0L 36.9301,0C 39.1392,0 40.9301,1.79083 40.9301,3.99997L 40.9301,31.8352C 40.9301,34.0444 39.1392,35.8353 36.9301,35.8353L 4,35.8353C 1.79089,35.8353 0,34.0444 0,31.8352L 0,3.99997C 0,1.79083 1.79089,0 4,0 Z "/>
+                        <Viewbox Width="17.9883" Height="29.5058" Canvas.Left="11.745" Canvas.Top="2.62616">
+                            <Canvas Width="17.9883" Height="29.5058">
+                                <Path Width="10.058" Height="21.3819" Canvas.Left="3.7442" Canvas.Top="0" Stretch="Fill" StrokeThickness="0.5" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF" Data="F1 M 9.93872,0.25C 10.819,1.90234 11.699,3.55466 12.4648,5.61047C 13.2306,7.66626 13.8821,10.1255 13.3698,12.1932C 12.8574,14.261 11.1813,15.937 10.152,17.3616C 9.12268,18.7861 8.74023,19.959 8.35791,21.1319C 7.34961,20.2664 6.34131,19.4009 5.39429,17.8702C 4.44739,16.3396 3.56177,14.1438 4.22424,11.7321C 4.88647,9.3204 7.09717,6.69278 8.30762,4.74313C 9.51807,2.79346 9.72827,1.52173 9.93872,0.25 Z "/>
+                                <Path Width="6.48401" Height="10.8861" Canvas.Left="0.559202" Canvas.Top="10.3367" Stretch="Fill" StrokeThickness="0.5" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF" Data="F1 M 3.54358,10.5867C 3.18481,13.002 2.82629,15.4174 3.3678,17.1484C 3.90942,18.8794 5.35156,19.9261 6.79321,20.9727C 4.94153,20.5921 3.08984,20.2115 1.99915,19.1026C 0.908447,17.9938 0.579224,16.1566 0.963501,14.6159C 1.34778,13.0752 2.44556,11.8309 3.54358,10.5867 Z "/>
+                                <Path Width="7.41547" Height="14.2456" Canvas.Left="9.74915" Canvas.Top="6.88928" Stretch="Fill" StrokeThickness="0.5" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF" Data="F1 M 16.9087,14.0487C 16.8501,12.2481 16.3669,10.4183 15.8435,9.26187C 15.3204,8.10544 14.7566,7.62234 14.1931,7.13928C 14.486,9.50342 14.7786,11.8675 14.1748,13.6425C 13.5709,15.4174 12.0706,16.6031 11.2252,17.712C 10.3799,18.8208 10.1895,19.8529 9.99915,20.8849C 12.0778,20.3872 14.1567,19.8895 15.3789,18.755C 16.6012,17.6205 16.9673,15.8492 16.9087,14.0487 Z "/>
+                                <Viewbox Width="17.8901" Height="8.92114" Canvas.Left="0.0981445" Canvas.Top="20.5847">
+                                    <Canvas Width="17.8901" Height="8.92114">
+                                        <Path Width="16.3633" Height="8.61169" Canvas.Left="0.931396" Canvas.Top="-6.10352e-005" Stretch="Fill" StrokeThickness="0.5" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF" Data="F1 M 15.9109,0.249939C 13.4078,1.01117 10.9045,1.77237 8.44971,2.6687C 5.99475,3.565 3.58801,4.59647 1.1814,5.62793C 1.66455,5.77063 2.14758,5.91336 2.36182,6.36896C 2.57581,6.82462 2.521,7.59314 2.46594,8.36163C 4.99341,7.24603 7.52075,6.1304 9.94092,5.1481C 12.361,4.16577 14.6738,3.31677 16.9866,2.46771C 17.045,2.04321 17.1038,1.61865 16.9244,1.24905C 16.7452,0.879425 16.3281,0.564697 15.9109,0.249939 Z "/>
+                                        <Path Width="2.60726" Height="3.43013" Canvas.Left="0.162999" Canvas.Top="5.37442" Stretch="Fill" StrokeThickness="0.5" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFBEBEBE" Data="F1 M 2.47559,8.37329C 2.18286,8.47256 1.89014,8.57184 1.51917,8.552C 1.14844,8.53214 0.698975,8.39313 0.516602,7.89362C 0.333984,7.39407 0.418213,6.53397 0.573242,6.0957C 0.728027,5.65738 0.953857,5.6409 1.17969,5.62442C 1.66284,5.76715 2.146,5.90985 2.36194,6.36798C 2.57776,6.82617 2.52661,7.59973 2.47559,8.37329 Z "/>
+                                        <Path Width="16.1607" Height="6.03336" Canvas.Left="0.797339" Canvas.Top="1.02734" Stretch="Fill" StrokeThickness="0.5" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF" Data="F1 M 1.52405,1.27734C 4.06018,1.66528 6.59631,2.05316 9.12708,2.51978C 11.6577,2.98636 14.1829,3.53168 16.708,4.07697C 16.2249,4.21967 15.7418,4.36243 15.5278,4.81802C 15.3137,5.27368 15.3687,6.04218 15.4235,6.8107C 11.782,5.91776 8.14075,5.02481 5.78577,4.54175C 3.43079,4.05865 2.36206,3.98547 1.29346,3.91226C 1.15442,3.48041 1.01538,3.04861 1.05383,2.60944C 1.09229,2.17029 1.30811,1.72379 1.52405,1.27734 Z "/>
+                                        <Path Width="2.60736" Height="3.43013" Canvas.Left="15.1196" Canvas.Top="3.82352" Stretch="Fill" StrokeThickness="0.5" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFBEBEBE" Data="F1 M 15.4143,6.82233C 15.707,6.92163 16,7.0209 16.3707,7.0011C 16.7417,6.98123 17.1909,6.84222 17.3735,6.34268C 17.5559,5.84317 17.4718,4.98306 17.3169,4.54474C 17.1619,4.10648 16.936,4.09 16.7102,4.07352C 16.2272,4.21622 15.7441,4.35895 15.5281,4.81708C 15.3121,5.27527 15.3633,6.04877 15.4143,6.82233 Z "/>
+                                    </Canvas>
+                                </Viewbox>
+                            </Canvas>
+                        </Viewbox>
+                    </Canvas>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Background="#014A8D">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
+                    <Button Name="cmdYes" Content="Yes" Width="145" Height="40" Style="{StaticResource buttonYesStyle}" Margin="10,0,10,0" Click="cmdYes_Click" />
+                    <Button Name="cmdCancel" Content="Cancel" Width="145" Height="40" Style="{StaticResource buttonNoStyle}" Margin="10,0,0,0" Click="cmdCancel_Click" />
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

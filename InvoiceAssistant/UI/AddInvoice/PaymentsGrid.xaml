@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="InvoiceAssistant.UI.AddInvoice.PaymentsGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Background="Transparent"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="109"/>
+            <ColumnDefinition Width="52" />
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <TextBlock Foreground="Yellow" FontSize="20" Text="Description" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Arial" />
+        <TextBlock Foreground="Yellow" FontSize="20" Text="Ammount" Grid.Column="1" HorizontalAlignment="Center" FontFamily="Arial" />
+        
+        <StackPanel Name="spRows" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" />
+    </Grid>
+</UserControl>

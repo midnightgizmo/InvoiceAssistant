@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="InvoiceAssistant.UI.ViewInvoices.InvoiceGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#B62C2C">
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="FontFamily" Value="Arial" />
+                    <Setter Property="Foreground" Value="White" />
+                </Style>
+                <Style TargetType="Line">
+                    <Setter Property="X1" Value="0" />
+                    <Setter Property="Y1" Value="0" />
+                    <Setter Property="X2" Value="0" />
+                    <Setter Property="Y2" Value="30" />
+                    <Setter Property="Stroke" Value="Black" />
+                    <Setter Property="StrokeThickness" Value="1" />
+                    <Setter Property="HorizontalAlignment" Value="Right" />
+                    <Setter Property="Margin" Value="0,0,-1,0" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <!-- Date -->
+                <ColumnDefinition Width="100" />
+                <!-- Ref Number -->
+                <ColumnDefinition Width="100" />
+                <!-- Description -->
+                <ColumnDefinition Width="*" />
+                <!-- Received On-->
+                <ColumnDefinition Width="100" />
+                <!-- Payment Type-->
+                <ColumnDefinition Width="100" />
+                <!-- Ammount (£) -->
+                <ColumnDefinition Width="100" />
+                <!-- In Account On-->
+                <ColumnDefinition Width="100" />
+                <!-- Numbr of times visited -->
+                <ColumnDefinition Width="100"/>
+                <!-- More Options-->
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Date"/>
+            <Line Grid.Column="0" />
+
+            <TextBlock Grid.Column="1" Text="Ref No."/>
+            <Line Grid.Column="1" />
+
+            <TextBlock Grid.Column="2" Text="Description"/>
+            <Line Grid.Column="2" />
+
+            <TextBlock Grid.Column="3" Text="Received On"/>
+            <Line Grid.Column="3" />
+
+            <TextBlock Grid.Column="4" Text="Payment Type"/>
+            <Line Grid.Column="4" />
+
+            <TextBlock Grid.Column="5" Text="Ammount (£)"/>
+            <Line Grid.Column="5" />
+
+            <TextBlock Grid.Column="6" Text="In Account On"/>
+            <Line Grid.Column="6" />
+
+            <TextBlock Grid.Column="7" Text="Times Visited"/>
+            <Line Grid.Column="7" />
+            
+        </Grid>
+        <StackPanel Name="spGrid" Grid.Row="1">
+            
+        </StackPanel>
+    </Grid>
+</UserControl>

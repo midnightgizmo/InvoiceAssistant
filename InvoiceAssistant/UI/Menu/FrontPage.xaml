@@ -1,0 +1,290 @@
+﻿<UserControl x:Class="InvoiceAssistant.UI.Menu.FrontPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="838" d:DesignWidth="762">
+    
+    <UserControl.Resources>
+
+        <!-- View Invoices button -->
+        <Style x:Key="buttonViewInvoiceStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+
+
+                        <Border x:Name="theBorder" CornerRadius="11" Background="#1F3E5A" BorderBrush="#FFFFFF" BorderThickness="1" Height="142" Width="307" >
+                            <StackPanel Orientation="Horizontal">
+
+                                <Canvas Margin="25,10,-20,0" Width="133.53" Height="48.8719">
+                                    <Path Width="98.1683" Height="17.8989" Canvas.Left="0.0623779" Canvas.Top="0.478746" Stretch="Fill" StrokeThickness="0.5" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FF7B7B69" Data="F1 M 0.312378,7.31543C 7.62769,6.35199 14.9429,5.38855 21.6782,4.45184C 28.4136,3.51514 34.569,2.60516 40.6442,1.90936C 46.7194,1.2135 52.7142,0.731812 57.6074,0.72876C 62.5006,0.72583 66.2921,1.2016 71.0558,2.25427C 75.8196,3.30701 81.5558,4.93652 86.5114,6.2821C 91.467,7.62769 95.642,8.68933 97.1943,9.6438C 98.7465,10.5984 97.6761,11.4459 96.7572,12.3246C 95.8383,13.2033 95.0711,14.1133 93.2527,13.9752C 91.4343,13.8372 88.5648,12.6512 84.6395,10.8581C 80.7142,9.06494 75.7333,6.66473 70.8967,5.37537C 66.0601,4.08606 61.3676,3.90765 56.4611,4.05933C 51.5546,4.21094 46.4338,4.69275 42.3838,5.62048C 38.3336,6.54828 35.354,7.92206 32.7759,9.41187C 30.1978,10.9017 28.021,12.5075 23.1145,13.9794C 18.2079,15.4514 10.5715,16.7896 2.93518,18.1277L 0.312378,7.31543 Z "/>
+                                    <Path Width="85.749" Height="25.4747" Canvas.Left="47.7809" Canvas.Top="17.8295" Stretch="Fill" StrokeThickness="0.5" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FF757567" Data="F1 M 49.5295,30.0974C 62.8932,27.6887 76.2569,25.28 83.8715,23.861C 91.486,22.4417 93.3515,22.012 97.0121,21.1972C 100.673,20.3824 106.128,19.1826 110.191,18.5767C 114.254,17.9708 116.925,17.9589 120.469,18.3247C 124.014,18.6904 128.433,19.4338 132.852,20.1772C 133.088,20.1772 133.28,20.9042 133.28,21.1407L 129.247,26.1365C 129.247,26.1365 128.271,25.851 128.034,25.851C 124.383,23.9539 120.731,22.0566 116.265,21.7652C 111.798,21.4738 106.517,22.7881 101.236,24.1025C 101.236,24.1025 98.0438,24.5621 89.7276,28.2775C 85.9474,29.9663 78.5905,34.6989 74.4191,36.1993C 69.2239,38.0681 59.8676,41.0212 55.5245,42.0872C 49.177,43.6451 48.8159,42.8696 48.8159,42.8009L 48.0309,30.3115C 48.2986,30.4186 49.2931,30.0974 49.5295,30.0974 Z "/>
+                                    <Path Width="48.9619" Height="41.4481" Canvas.Left="0.0148729" Canvas.Top="7.35954" Stretch="Fill" StrokeThickness="0.5" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FF67675E" Data="M 22.8662,24.3286C 23.4028,23.7992 24.4452,24.0178 25.6414,24.3801C 26.8375,24.7425 28.1877,25.2485 29.7272,25.7785C 31.2666,26.3083 32.9954,26.8622 34.6068,27.3917C 36.2183,27.9213 37.7124,28.4266 39.1926,29.0021C 40.673,29.5776 42.1394,30.2234 43.0016,30.9861C 43.8636,31.7488 44.1213,32.6285 44.2478,34.186C 44.3741,35.7434 44.3691,37.9786 44.6046,40.3928C 44.8401,42.8069 45.3158,45.3999 43.7993,46.1017C 42.2827,46.8035 38.7737,45.614 36.1272,44.6445C 33.4807,43.6752 31.6964,42.9258 30.1136,42.0399C 28.5309,41.1539 27.1494,40.1315 26.2068,39.1888C 25.2642,38.2462 24.7603,37.3834 24.2571,36.2012C 23.7538,35.0188 23.2512,33.5172 22.9197,31.9991C 22.5881,30.4811 22.4275,28.9467 22.3628,27.5408C 22.2982,26.1351 22.3293,24.8578 22.8662,24.3286 Z M 4.64575,9.36072C 5.62939,9.84467 6.76233,10.4245 8.31506,11.5021C 9.8678,12.5798 11.8403,14.1552 13.183,15.2089C 14.5256,16.2627 15.2385,16.7947 15.8179,17.4084C 16.3972,18.022 16.8431,18.7172 17.191,19.3636C 17.5388,20.0101 17.7886,20.6078 18.4191,20.9041C 19.0494,21.2003 20.0605,21.1951 20.9749,21.1461C 21.8893,21.097 22.707,21.004 23.5781,21.0303C 24.4492,21.0566 25.3734,21.202 26.7339,21.5103C 28.0944,21.8184 29.8909,22.2891 31.8218,22.9231C 33.7526,23.5571 35.8176,24.3542 38.4553,25.3311C 41.0929,26.3079 44.3031,27.4645 46.0042,28.188C 47.7051,28.9116 47.8967,29.202 48.0388,30.0701C 48.1808,30.9382 48.2732,32.3838 48.3636,34.2719C 48.4541,36.1598 48.5427,38.4902 48.6274,40.6782C 48.7123,42.8661 48.7932,44.9117 48.6426,46.1094C 48.4919,47.3071 48.1097,47.6567 47.1677,47.9342C 46.2258,48.2115 44.7241,48.4167 43.0068,48.512C 41.2896,48.6071 39.3566,48.5922 37.1234,48.0851C 34.8901,47.5782 32.3566,46.579 30.2064,45.4451C 28.0562,44.3112 26.2893,43.0424 25.0747,41.4938C 23.86,39.9453 23.1975,38.1168 22.6877,36.5641C 22.1781,35.0114 21.821,33.7342 21.4894,32.653C 21.1576,31.5717 20.8512,30.6862 20.3054,29.9937C 19.7596,29.3011 18.9746,28.8016 18.1896,29.1941C 17.4045,29.5867 16.6195,30.8712 15.7854,32.096C 14.9514,33.3209 14.0684,34.4858 12.7616,34.765C 11.4547,35.0442 9.72412,34.4376 8.37256,33.6703C 7.021,32.9032 6.04858,31.9753 4.94287,29.6505C 3.83716,27.3256 2.59814,23.6035 1.84583,20.7146C 1.09351,17.8257 0.827881,15.7699 0.647949,14.2191C 0.468018,12.6684 0.373901,11.6227 0.321777,10.7491C 0.269775,9.87567 0.259888,9.17432 0.266846,8.62549C 0.273804,8.07684 0.297607,7.68054 0.588257,7.61841C 0.878906,7.5564 1.43652,7.82849 2.13232,8.15857C 2.82813,8.48865 3.66223,8.87671 4.64575,9.36072 Z M 2.51831,11.6161C 3.28613,11.1186 5.4928,13.0126 7.69934,14.9065C 10.0425,16.688 12.3856,18.4695 13.4753,20.2747C 14.5652,22.0798 14.4016,23.9086 14.2737,25.5077C 14.1459,27.1068 14.0537,28.4761 14.027,29.676C 14.0002,30.8759 14.0388,31.9063 13.7013,32.3947C 13.3638,32.8831 12.6501,32.8296 11.6049,32.1665C 10.5597,31.5033 9.18286,30.2306 7.81055,28.5088C 6.43823,26.787 5.07031,24.6163 4.28467,22.7719C 3.49902,20.9275 3.29578,19.4094 2.85864,17.2059C 2.42151,15.0024 1.75061,12.1135 2.51831,11.6161 Z "/>
+                                    <Viewbox Width="45.2119" Height="39.2683" Canvas.Left="0.884766" Canvas.Top="9.00262">
+                                        <Canvas Width="45.2119" Height="39.2683">
+                                            <Path Width="23.0265" Height="22.8006" Canvas.Left="21.2588" Canvas.Top="14.7879" Stretch="Fill" StrokeThickness="0.5" StrokeLineJoin="Round" Stroke="#9B98984A" Fill="#9BFFFFFF" Data="F1 M 22.0365,15.3539C 22.5732,14.8246 23.6155,15.0432 24.8118,15.4055C 26.0078,15.7679 27.358,16.2739 28.8975,16.8039C 30.4369,17.3338 32.1658,17.8876 33.7771,18.4171C 35.3887,18.9467 36.8827,19.452 38.363,20.0275C 39.8433,20.6031 41.3098,21.2488 42.1719,22.0115C 43.0339,22.7742 43.2917,23.654 43.4181,25.2114C 43.5444,26.7689 43.5396,29.004 43.7749,31.4182C 44.0104,33.8322 44.4861,36.4254 42.9696,37.1271C 41.453,37.8289 37.9441,36.6395 35.2976,35.67C 32.651,34.7006 30.8667,33.9512 29.2839,33.0653C 27.7012,32.1794 26.3198,31.1569 25.3772,30.2142C 24.4346,29.2716 23.9305,28.4088 23.4274,27.2265C 22.9241,26.0443 22.4216,24.5425 22.0901,23.0245C 21.7584,21.5064 21.5979,19.972 21.5332,18.5662C 21.4685,17.1605 21.4998,15.8832 22.0365,15.3539 Z "/>
+                                            <Path Width="12.6978" Height="21.6833" Canvas.Left="1.08851" Canvas.Top="2.31089" Stretch="Fill" StrokeThickness="0.5" StrokeLineJoin="Round" Stroke="#9B98984A" Fill="#9BFFFFFF" Data="F1 M 1.68872,2.64142C 2.45654,2.14398 4.66309,4.0379 6.86963,5.93182C 9.21277,7.71332 11.5559,9.49481 12.6458,11.2999C 13.7355,13.1051 13.572,14.9339 13.4441,16.533C 13.3162,18.1321 13.224,19.5015 13.1973,20.7014C 13.1705,21.9012 13.2092,22.9316 12.8716,23.42C 12.5342,23.9084 11.8204,23.8549 10.7751,23.1917C 9.72998,22.5286 8.35315,21.2559 6.98083,19.5341C 5.60852,17.8124 4.2406,15.6417 3.45508,13.7972C 2.66943,11.9528 2.46606,10.4348 2.02905,8.23126C 1.5918,6.02777 0.920898,3.13892 1.68872,2.64142 Z "/>
+                                        </Canvas>
+                                    </Viewbox>
+                                </Canvas>
+
+                                <TextBlock x:Name="theText"  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="30" Foreground="White" >
+                                    View 
+                                    <LineBreak />
+                                    Invoices
+                                </TextBlock>
+                            </StackPanel>
+                            
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="theText" Property="Foreground" Value="Yellow" />
+                            </Trigger>
+
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter  TargetName="theBorder" Property="Background" Value="#162F5F" />
+                                <Setter  TargetName="theBorder" Property="BorderBrush" Value="Yellow" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Add Invoice button -->
+        <Style x:Key="buttonAddInvoiceStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+
+
+                        <Border x:Name="theBorder" CornerRadius="11" Background="#1F3E5A" BorderBrush="#FFFFFF" BorderThickness="1" Height="142" Width="307" >
+                            <StackPanel Orientation="Horizontal">
+
+                                <Canvas Width="54.62" Height="54.55"  Margin="25,0,30,0">
+                                    <Path Width="55.5495" Height="55.6172" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF" Data="F1 M -602.206,157.97L -602.206,175.376C -602.197,176.005 -602.188,176.634 -603.179,177.444C -604.171,178.254 -606.162,179.245 -608.173,179.257C -610.185,179.269 -612.217,178.301 -613.237,177.492C -614.258,176.682 -614.266,176.029 -614.274,175.376L -614.328,158.019L -631.788,158.069C -632.417,158.077 -633.045,158.086 -633.855,157.095C -634.665,156.104 -635.656,154.113 -635.668,152.101C -635.68,150.089 -634.713,148.057 -633.903,147.037C -633.093,146.017 -632.441,146.009 -631.788,146L -614.408,145.963L -614.434,128.52C -614.443,127.891 -614.452,127.262 -613.461,126.452C -612.469,125.643 -610.478,124.652 -608.466,124.64C -606.455,124.628 -604.423,125.595 -603.403,126.405C -602.382,127.215 -602.374,127.867 -602.366,128.52L -602.386,145.94L -584.999,145.955C -584.37,145.946 -583.742,145.937 -582.932,146.928C -582.122,147.919 -581.131,149.911 -581.119,151.922C -581.107,153.934 -582.074,155.966 -582.884,156.986C -583.694,158.007 -584.346,158.015 -584.999,158.023L -602.405,158.023"/>
+                                </Canvas>
+
+                                <TextBlock x:Name="theText"  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="30" Foreground="White" >
+                                    Add 
+                                    <LineBreak />
+                                    Invoice
+                                </TextBlock>
+                            </StackPanel>
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="theText" Property="Foreground" Value="Yellow" />
+                            </Trigger>
+
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter  TargetName="theBorder" Property="Background" Value="#162F5F" />
+                                <Setter  TargetName="theBorder" Property="BorderBrush" Value="Yellow" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- End of Year Reports button -->
+        <Style x:Key="buttonEndOfYearStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+
+
+                        <Border x:Name="theBorder" CornerRadius="11" Background="#1F3E5A" BorderBrush="#FFFFFF" BorderThickness="1" Height="142" Width="307" >
+                            <StackPanel Orientation="Horizontal">
+
+
+                                        <Canvas Width="69.3624" Height="61.6562" Margin="25,0,20,0">
+                                            <Path Width="68.6456" Height="60.9397" Canvas.Left="0.475158" Canvas.Top="0.474915" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 2.95471,10.1585L 57.6115,0.520996C 59.2432,0.233276 60.7992,1.32278 61.0869,2.95447L 69.0746,48.2556C 69.3624,49.8873 68.2729,51.4433 66.6412,51.731L 11.9844,61.3685C 10.3528,61.6562 8.79675,60.5667 8.50903,58.935L 0.52124,13.6338C 0.233521,12.0022 1.323,10.4462 2.95471,10.1585 Z "/>
+                                            <Path Width="62.6494" Height="22.4965" Canvas.Left="-0.00012207" Canvas.Top="0" Stretch="Fill" Fill="#FFFF0000" Data="F1 M -0.00012207,10.6794L 60.5656,0L 62.6492,11.8171L 2.0835,22.4965L -0.00012207,10.6794 Z "/>
+                                            <TextBlock TextAlignment="Left" FontFamily="Arial" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+				                                <TextBlock.RenderTransform>
+					                                <TransformGroup>
+						                                <MatrixTransform Matrix="1.31308,-0.231531,0.231531,1.31308,18.5907,29.7399"/>
+					                                </TransformGroup>
+				                                </TextBlock.RenderTransform>
+				                                <Run Text="31" Foreground="#FFFF0000"/>
+                                                                            </TextBlock>
+                                                                            <TextBlock TextAlignment="Left" FontFamily="Arial" FontSize="8" VerticalAlignment="Top" HorizontalAlignment="Left">
+				                                <TextBlock.RenderTransform>
+					                                <TransformGroup>
+						                                <MatrixTransform Matrix="1.31308,-0.231531,0.231531,1.31308,8.06039,21.8486"/>
+					                                </TransformGroup>
+				                                </TextBlock.RenderTransform>
+				                                <Run Text="December" Foreground="#FFFF0000"/>
+                                            </TextBlock>
+                                            <Path Width="49.4166" Height="9.12531" Canvas.Left="9.58325" Canvas.Top="24.9474" Stretch="Fill" StrokeThickness="0.5" StrokeLineJoin="Round" Stroke="#FFFF0000" Data="F1 M 9.83325,33.8227L 58.7499,25.1974"/>
+                                            <Path Width="49.4166" Height="9.12534" Canvas.Left="13.584" Canvas.Top="47.636" Stretch="Fill" StrokeThickness="0.5" StrokeLineJoin="Round" Stroke="#FFFF0000" Data="F1 M 13.834,56.5113L 62.7505,47.886"/>
+                                            <Path Width="7.12623" Height="7.12619" Canvas.Left="8.75195" Canvas.Top="11.1002" Stretch="Fill" Fill="#FF1F3E5A" Data="F1 M 11.6964,11.1549C 13.634,10.8132 15.4817,12.107 15.8235,14.0447C 16.165,15.9823 14.8713,17.83 12.9337,18.1717C 10.9961,18.5133 9.14832,17.2195 8.80664,15.2819C 8.46509,13.3442 9.75879,11.4966 11.6964,11.1549 Z "/>
+                                            <Path Width="7.12621" Height="7.12619" Canvas.Left="47.9041" Canvas.Top="4.19659" Stretch="Fill" Fill="#FF1F3E5A" Data="F1 M 50.8486,4.25131C 52.7863,3.90964 54.634,5.20337 54.9756,7.14108C 55.3173,9.0787 54.0234,10.9264 52.0859,11.2681C 50.1482,11.6097 48.3005,10.3159 47.9589,8.3783C 47.6172,6.44064 48.911,4.59293 50.8486,4.25131 Z "/>
+                                        </Canvas>
+
+
+
+
+
+                                <TextBlock x:Name="theText"  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="30" Foreground="White" >
+                                    End of Year 
+                                    <LineBreak />
+                                    Reports
+                                </TextBlock>
+                            </StackPanel>
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="theText" Property="Foreground" Value="Yellow" />
+                            </Trigger>
+
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter  TargetName="theBorder" Property="Background" Value="#162F5F" />
+                                <Setter  TargetName="theBorder" Property="BorderBrush" Value="Yellow" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Invoice Addresses button -->
+        <Style x:Key="buttonAddressesStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+
+
+                        <Border x:Name="theBorder" CornerRadius="11" Background="#1F3E5A" BorderBrush="#FFFFFF" BorderThickness="1" Height="142" Width="307" >
+                            <StackPanel Orientation="Horizontal">
+                                
+                                <Path Margin="25,0,25,0" Width="58.5605" Height="56.0049" Stretch="Fill" Fill="#FFFFFFFF" Data="M -646.039,347.072L -634.7,336.927L -634.738,325.253L -630.886,325.253L -630.809,332.727L -617.17,320.553L -587.479,347.021L -592.719,347.021L -592.513,376.558L -619.743,376.455L -619.841,348.639L -633.634,348.562L -633.341,376.472L -641.211,376.455L -641.339,347.098L -646.039,347.072 Z M -611.134,348.87L -600.655,348.87L -600.655,364.358L -611.134,364.358L -611.134,348.87 Z "/>
+
+                                <TextBlock x:Name="theText"  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="30" Foreground="White" >
+                                    Invoice 
+                                    <LineBreak />
+                                    Addresses
+                                </TextBlock>
+                            </StackPanel>
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="theText" Property="Foreground" Value="Yellow" />
+                            </Trigger>
+
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter  TargetName="theBorder" Property="Background" Value="#162F5F" />
+                                <Setter  TargetName="theBorder" Property="BorderBrush" Value="Yellow" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <!-- Settings button -->
+        <Style x:Key="buttonSettingsStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+
+
+                        <Border x:Name="theBorder" CornerRadius="11" Background="#1F3E5A" BorderBrush="#FFFFFF" BorderThickness="1" Height="142" Width="307" >
+                            <StackPanel Orientation="Horizontal">
+                                
+                                <Path Margin="25,0,25,0" Width="58.8701" Height="58.3642" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M -847.269,512.14L -854.591,505.443L -844.65,505.443L -838.221,512.2L -838.281,523.331L -819.887,540.891L -810.244,541.01L -803.042,548.569L -803.042,556.248L -805.244,556.188L -809.887,550.057L -815.245,549.938L -817.864,552.736L -817.864,557.498L -811.792,562.319L -811.732,563.808L -820.483,563.748L -826.435,558.51L -826.435,547.319L -845.483,529.462L -854.769,529.521L -861.912,522.319L -861.912,513.152L -855.424,520.533L -850.721,520.533C -849.928,520.513 -849.134,520.493 -848.539,520.057C -847.944,519.62 -847.547,518.767 -847.15,517.914L -847.269,512.14 Z "/>
+
+                                <TextBlock x:Name="theText"  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="30" Foreground="White" >
+                                    Settings 
+                                </TextBlock>
+                            </StackPanel>
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="theText" Property="Foreground" Value="Yellow" />
+                            </Trigger>
+
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter  TargetName="theBorder" Property="Background" Value="#162F5F" />
+                                <Setter  TargetName="theBorder" Property="BorderBrush" Value="Yellow" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="76" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#B62C2C">
+            <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" FontSize="36">Invoice Assistant</TextBlock>
+        </Border>
+        
+        <Border Grid.Row="1">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.436803,-0.00131242" EndPoint="0.436803,1.00262">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="#FF065C9E" Offset="0"/>
+                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Border.Background>
+            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Button Name="cmdViewInvoices" Click="cmdViewInvoices_Click" Grid.Column="0" Grid.Row="1" Width="307" Height="142" HorizontalAlignment="Right" Margin="0,0,50,0" Style="{StaticResource buttonViewInvoiceStyle}" />
+                <Button Name="cmdAddInvoice" Click="cmdAddInvoice_Click" Grid.Column="1" Grid.Row="1" Width="307" Height="142" HorizontalAlignment="Left" Margin="50,0,0,0" Style="{StaticResource buttonAddInvoiceStyle}" />
+
+                <Button Name="cmdEndOfYearReports" Click="cmdEndOfYearReports_Click" Grid.Column="0" Grid.Row="3" Width="307" Height="142" HorizontalAlignment="Right" Margin="0,0,50,0" Style="{StaticResource buttonEndOfYearStyle}" />
+                <Button Name="cmdInvoiceAddresses" Click="cmdInvoiceAddresses_Click" Grid.Column="1" Grid.Row="3" Width="307" Height="142" HorizontalAlignment="Left" Margin="50,0,0,0" Style="{StaticResource buttonAddressesStyle}" />
+
+                <Button Name="cmdSettings" Click="cmdSettings_Click" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Width="307" Height="142" HorizontalAlignment="Center" Style="{StaticResource buttonSettingsStyle}" />
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

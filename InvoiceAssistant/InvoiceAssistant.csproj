@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82BF36CB-A9BD-4919-8FC1-79276BD523B8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InvoiceAssistant</RootNamespace>
+    <AssemblyName>InvoiceAssistant</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Database\Data\Invoice.cs" />
+    <Compile Include="Database\Data\InvoicePaymentBreakDown.cs" />
+    <Compile Include="Database\Data\PaymentType.cs" />
+    <Compile Include="Database\Queries\GrossIncomeQuery.cs" />
+    <Compile Include="Database\Queries\MileageReportyQuery.cs" />
+    <Compile Include="Database\Tables\dbInvoice.cs" />
+    <Compile Include="Database\Tables\dbInvoicePaymentBreakDown.cs" />
+    <Compile Include="Database\Tables\dbpaymentType.cs" />
+    <Compile Include="Printing\ExcelXMLInvoiceCreator.cs" />
+    <Compile Include="UI\AddInvoice\AddPayment.xaml.cs">
+      <DependentUpon>AddPayment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddInvoice\Invoice.xaml.cs">
+      <DependentUpon>Invoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddInvoice\MainDetails.xaml.cs">
+      <DependentUpon>MainDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddInvoice\PaymentsGrid.xaml.cs">
+      <DependentUpon>PaymentsGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddInvoice\PaymentsRow.xaml.cs">
+      <DependentUpon>PaymentsRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Address\AddressGrid.xaml.cs">
+      <DependentUpon>AddressGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Address\AddressInfo.xaml.cs">
+      <DependentUpon>AddressInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Address\AddressRow.xaml.cs">
+      <DependentUpon>AddressRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Address\ConfirmDelition.xaml.cs">
+      <DependentUpon>ConfirmDelition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Address\ManageAddresses.xaml.cs">
+      <DependentUpon>ManageAddresses.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Menu\FrontPage.xaml.cs">
+      <DependentUpon>FrontPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RandomStuff\GridLengthAnimation.cs" />
+    <Compile Include="UI\Reports\Mileage\MileageReport.xaml.cs">
+      <DependentUpon>MileageReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reports\ProfitLoss\ProfitLossReport.xaml.cs">
+      <DependentUpon>ProfitLossReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reports\ReportsMenu.xaml.cs">
+      <DependentUpon>ReportsMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewInvoices\InvoiceGrid.xaml.cs">
+      <DependentUpon>InvoiceGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewInvoices\InvoiceRow.xaml.cs">
+      <DependentUpon>InvoiceRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewInvoices\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewInvoices\MoreInfo.xaml.cs">
+      <DependentUpon>MoreInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewInvoices\PaymentBreakDown\PaymentGrid.xaml.cs">
+      <DependentUpon>PaymentGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewInvoices\PaymentBreakDown\PaymentRow.xaml.cs">
+      <DependentUpon>PaymentRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewInvoices\PrintInvoicePage.xaml.cs">
+      <DependentUpon>PrintInvoicePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewInvoices\SearchPage.xaml.cs">
+      <DependentUpon>SearchPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Database\connection.cs" />
+    <Compile Include="Database\Data\Address.cs" />
+    <Compile Include="Database\Tables\dbAddress.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="UI\AddInvoice\AddPayment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\AddInvoice\Invoice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\AddInvoice\MainDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\AddInvoice\PaymentsGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\AddInvoice\PaymentsRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Address\AddressGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Address\AddressInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Address\AddressRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Address\ConfirmDelition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Address\ManageAddresses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Menu\FrontPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Reports\Mileage\MileageReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Reports\ProfitLoss\ProfitLossReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Reports\ReportsMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Templates\DropDownList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ViewInvoices\InvoiceGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ViewInvoices\InvoiceRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ViewInvoices\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ViewInvoices\MoreInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ViewInvoices\PaymentBreakDown\PaymentGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ViewInvoices\PaymentBreakDown\PaymentRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ViewInvoices\PrintInvoicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ViewInvoices\SearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\Invoices.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Printing\ExcelXMLInvoiceTemplate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatePickerCustomised\DatePickerCustomised.csproj">
+      <Project>{C505D314-B178-4211-99A9-B0C2D8EEF6CF}</Project>
+      <Name>DatePickerCustomised</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\Printing\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

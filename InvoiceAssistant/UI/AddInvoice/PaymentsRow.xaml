@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="InvoiceAssistant.UI.AddInvoice.PaymentsRow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Background="Transparent"
+             d:DesignHeight="35" d:DesignWidth="515">
+    
+    <UserControl.Resources>
+        <Style x:Key="buttonDeleteStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+
+
+                        <Canvas Width="20.0557" Height="20.0555">
+                            <Path x:Name="pathBorder" Width="20.0554" Height="20.0555" Canvas.Left="0.000244141" Canvas.Top="-6.10352e-005" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FFFFFFFF" Fill="#FF378DC3" Data="F1 M 10.0278,0.499939C 15.29,0.499939 19.5557,4.76556 19.5557,10.0277C 19.5557,15.2898 15.2898,19.5555 10.0278,19.5555C 4.76587,19.5555 0.500244,15.2898 0.500244,10.0277C 0.500244,4.76556 4.76587,0.499939 10.0278,0.499939 Z "/>
+                            <Viewbox Width="9.76172" Height="13.5498" Canvas.Left="5.36182" Canvas.Top="2.96259">
+                                <Canvas Width="9.76172" Height="13.5498">
+                                    <Rectangle x:Name="rec1" Width="1.34521" Height="9.81628" Canvas.Left="0.783936" Canvas.Top="3.73334" Stretch="Fill" Fill="#FFFFFFFF"/>
+                                    <Rectangle x:Name="rec2" Width="1.34497" Height="9.80835" Canvas.Left="7.45361" Canvas.Top="3.73944" Stretch="Fill" Fill="#FFFFFFFF"/>
+                                    <Rectangle x:Name="rec3" Width="5.4541" Height="1.36493" Canvas.Left="2.0791" Canvas.Top="12.1848" Stretch="Fill" Fill="#FFFFFFFF"/>
+                                    <Rectangle x:Name="rec4" Width="5.38379" Height="1.34326" Canvas.Left="2.09058" Canvas.Top="3.73535" Stretch="Fill" Fill="#FFFFFFFF"/>
+                                    <Rectangle x:Name="rec5" Width="0.684814" Height="7.23828" Canvas.Left="3.64014" Canvas.Top="4.98242" Stretch="Fill" Fill="#FFFFFFFF"/>
+                                    <Rectangle x:Name="rec6" Width="0.68457" Height="7.23828" Canvas.Left="5.33521" Canvas.Top="5.01654" Stretch="Fill" Fill="#FFFFFFFF"/>
+                                    <Rectangle x:Name="rec7" Width="9.76172" Height="1.46997" Canvas.Left="0" Canvas.Top="1.45544" Stretch="Fill" Fill="#FFFFFFFF"/>
+                                    <Rectangle x:Name="rec8" Width="2.37939" Height="0.673157" Canvas.Left="3.73462" Canvas.Top="0" Stretch="Fill" Fill="#FFFFFFFF"/>
+                                </Canvas>
+                            </Viewbox>
+                        </Canvas>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="rec1" Property="Fill" Value="Yellow" />
+                                <Setter TargetName="rec2" Property="Fill" Value="Yellow" />
+                                <Setter TargetName="rec3" Property="Fill" Value="Yellow" />
+                                <Setter TargetName="rec4" Property="Fill" Value="Yellow" />
+                                <Setter TargetName="rec5" Property="Fill" Value="Yellow" />
+                                <Setter TargetName="rec6" Property="Fill" Value="Yellow" />
+                                <Setter TargetName="rec7" Property="Fill" Value="Yellow" />
+                                <Setter TargetName="rec8" Property="Fill" Value="Yellow" />
+                            </Trigger>
+
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter  TargetName="pathBorder" Property="Fill" Value="#162F5F" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <!-- Description-->
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1" />
+            
+            <!-- Ammount -->
+            <ColumnDefinition Width="107"/>
+            <ColumnDefinition Width="1" />
+            
+            <!-- Delete -->
+            <ColumnDefinition Width="52" />
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="29" />
+        </Grid.RowDefinitions>
+
+        <Border Background="#2D6AA2" Grid.Column="0">
+            <TextBlock Name="lblDescription" Foreground="White" FontSize="15" Margin="7,3,0,0" Text="The Royal Wolverhampton School"/>
+        </Border>
+
+        <Border Background="#2D6AA2" Grid.Column="2">
+            <TextBlock Name="lblPrice" Foreground="White" FontSize="15" Margin="0,3,0,0" HorizontalAlignment="Center" Text="£75.00"/>
+        </Border>
+
+        <Border Background="#2D6AA2" Grid.Column="4">
+            <Button Name="cmdDelete" Style="{StaticResource buttonDeleteStyle}" Click="cmdDelete_Click" />
+        </Border>
+    </Grid>
+</UserControl>

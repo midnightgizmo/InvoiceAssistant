@@ -1,0 +1,184 @@
+﻿<UserControl x:Class="InvoiceAssistant.UI.ViewInvoices.MoreInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InvoiceAssistant.UI.ViewInvoices.PaymentBreakDown"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="1474">
+    
+    <UserControl.Resources>
+       
+        <Style x:Key="buttonCloseStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+
+                            <Canvas x:Name="buttonUp" Width="27.5801" Height="27.58">
+                                <Path Width="27.5801" Height="27.58" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Data="F1 M 13.79,0C 21.4053,0 27.5801,6.17395 27.5801,13.79C 27.5801,21.406 21.4053,27.58 13.79,27.58C 6.17383,27.58 0,21.406 0,13.79C 0,6.17395 6.17383,0 13.79,0 Z ">
+                                    <Path.Fill>
+                                        <RadialGradientBrush RadiusX="0.900949" RadiusY="0.900933" Center="0.214539,0.168172" GradientOrigin="0.214539,0.168172">
+                                            <RadialGradientBrush.GradientStops>
+                                                <GradientStop Color="#FFFEC8C5" Offset="0"/>
+                                                <GradientStop Color="#FF7D0000" Offset="1"/>
+                                            </RadialGradientBrush.GradientStops>
+                                            <RadialGradientBrush.RelativeTransform>
+                                                <TransformGroup>
+                                                    <RotateTransform CenterX="0.214539" CenterY="0.168172" Angle="49.7747"/>
+                                                </TransformGroup>
+                                            </RadialGradientBrush.RelativeTransform>
+                                        </RadialGradientBrush>
+                                    </Path.Fill>
+                                </Path>
+                                <Path Width="16.6081" Height="16.6796" Canvas.Left="5.15523" Canvas.Top="5.1157" Stretch="Fill" Fill="#FFFFF000" Data="F1 M 13.4346,10.0334L 17.7285,5.73889C 18.0273,5.44019 18.3262,5.1416 18.6006,5.11731C 18.875,5.09326 19.126,5.34351 19.376,5.59399L 21.2344,7.45276C 21.5059,7.72388 21.7764,7.99487 21.7627,8.28003C 21.749,8.56506 21.4502,8.86401 21.1514,9.16284L 16.917,13.3965L 21.0039,17.52C 21.3486,17.8643 21.6924,18.2084 21.7529,18.4915C 21.8145,18.7745 21.5928,18.9966 21.3701,19.2185L 19.3076,21.2811C 19.0381,21.5515 18.7666,21.822 18.4678,21.7932C 18.1689,21.7644 17.8408,21.4365 17.5127,21.1086L 13.374,16.9517L 9.53418,20.7805C 9.16309,21.1506 8.79395,21.5208 8.4668,21.5642C 8.13965,21.6075 7.85645,21.3242 7.57324,21.041L 5.65332,19.1206C 5.43555,18.903 5.21777,18.6852 5.24512,18.4406C 5.27148,18.1959 5.54297,17.9244 5.81445,17.653L 9.92383,13.5129L 5.8125,9.40833C 5.49902,9.09485 5.18555,8.78125 5.15723,8.49573C 5.12988,8.21008 5.3877,7.95239 5.64551,7.69458L 7.64355,5.69629C 7.89941,5.44006 8.15527,5.18408 8.44336,5.21558C 8.73145,5.24707 9.0498,5.56641 9.37012,5.8855L 13.5371,10.0527"/>
+                            </Canvas>
+
+                            <Canvas x:Name="buttonDown" Width="33.1875" Height="32.79" Visibility="Collapsed">
+                                <Path Width="33.1875" Height="32.7899" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Data="F1 M 16.3945,0.00012207L 16.792,0C 25.8467,0 33.1875,7.34033 33.1875,16.3948L 33.1875,16.3948C 33.1875,25.4495 25.8467,32.7898 16.792,32.7898L 16.3945,32.7899C 7.33984,32.7899 0,25.4497 0,16.395L 0,16.395C 0,7.34045 7.33984,0.00012207 16.3945,0.00012207 Z ">
+                                    <Path.Fill>
+                                        <RadialGradientBrush RadiusX="0.524041" RadiusY="0.530398" Center="0.469309,0.479113" GradientOrigin="0.469309,0.479113">
+                                            <RadialGradientBrush.GradientStops>
+                                                <GradientStop Color="#FF000000" Offset="0"/>
+                                                <GradientStop Color="#FF000F1D" Offset="0.665094"/>
+                                                <GradientStop Color="#FF001E3A" Offset="1"/>
+                                            </RadialGradientBrush.GradientStops>
+                                            <RadialGradientBrush.RelativeTransform>
+                                                <TransformGroup/>
+                                            </RadialGradientBrush.RelativeTransform>
+                                        </RadialGradientBrush>
+                                    </Path.Fill>
+                                </Path>
+                                <Path Width="24.1475" Height="24.1467" Canvas.Left="4.56543" Canvas.Top="4.34631" Stretch="Fill" Fill="#FF440202" Data="F1 M 16.6387,4.34631C 23.3066,4.34631 28.7129,9.75171 28.7129,16.4197C 28.7129,23.0876 23.3066,28.493 16.6387,28.493C 9.9707,28.493 4.56543,23.0876 4.56543,16.4197C 4.56543,9.75171 9.9707,4.34631 16.6387,4.34631 Z "/>
+                                <Path Width="14.4501" Height="14.5124" Canvas.Left="9.06165" Canvas.Top="8.8327" Stretch="Fill" Fill="#FF616161" Data="F1 M 16.2637,13.1115L 20,9.375C 20.2607,9.11499 20.5205,8.8551 20.7598,8.83411C 20.998,8.81311 21.2168,9.03088 21.4336,9.24878L 23.0508,10.866C 23.2871,11.1021 23.5234,11.3379 23.5107,11.5859C 23.499,11.8337 23.2383,12.0939 22.9785,12.354L 19.2949,16.0376L 22.8506,19.6252C 23.1504,19.9248 23.4492,20.2242 23.5029,20.4705C 23.5557,20.7168 23.3633,20.9099 23.1699,21.1031L 21.375,22.8977C 21.1396,23.1331 20.9043,23.3683 20.6445,23.3433C 20.3838,23.3182 20.0986,23.033 19.8135,22.7477L 16.2129,19.1309L 12.8711,22.4622C 12.5488,22.7842 12.2266,23.1062 11.9424,23.1439C 11.6582,23.1818 11.4121,22.9353 11.165,22.6888L 9.49414,21.0181C 9.30469,20.8286 9.11523,20.6392 9.13867,20.4263C 9.16211,20.2134 9.39844,19.9772 9.63477,19.741L 13.21,16.1389L 9.63281,12.5676C 9.36035,12.2947 9.08789,12.022 9.06348,11.7734C 9.03906,11.525 9.26367,11.3008 9.4873,11.0767L 11.2266,9.33789C 11.4492,9.11487 11.6719,8.89209 11.9219,8.91956C 12.1719,8.94702 12.4502,9.22473 12.7285,9.50244L 16.3535,13.1282"/>
+                            </Canvas>
+
+                        </Grid>
+                        
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="buttonUp" Property="Visibility" Value="Collapsed" />
+                                <Setter TargetName="buttonDown" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+       
+        <Style x:Key="buttonYesNoStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="theBorder" CornerRadius="6" Background="White" BorderThickness="0" Height="23" Width="60"  >
+                            <TextBlock x:Name="theText" Margin="10,0,0,0" Text="{TemplateBinding Content}"  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI"  FontSize="15"  Foreground="Black" />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <!--<Setter TargetName="theText" Property="Foreground" Value="Yellow" />-->
+                                <Setter  TargetName="theBorder" Property="Background" Value="#E3E3E3" />
+
+                            </Trigger>
+
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <!--<Setter  TargetName="theBorder" Property="Background" Value="#162F5F" />
+                                            <Setter  TargetName="theBorder" Property="BorderBrush" Value="Yellow" />-->
+                                <Setter  TargetName="theBorder" Property="BorderBrush" Value="#006432" />
+                                <Setter  TargetName="theBorder" Property="BorderThickness" Value="1" />
+                                <Setter  TargetName="theBorder" Property="Background" Value="#BCD9B6" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="#001E3A">
+            <Grid>
+                <TextBlock Text="More Info" FontWeight="Bold" Foreground="White" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button Name="cmdClose" Content="Close" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0" Style="{StaticResource buttonCloseStyle}" Click="cmdClose_Click" />
+            </Grid>
+        </Border>
+
+        <Border Background="#024787" Grid.Row="1" />
+        
+        <Grid Grid.Row="1" Margin="0,0,00,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Name="addressGrid" Grid.Column="0" Margin="10,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="382"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="23.33" />
+                    <RowDefinition Height="37"/>
+                    <RowDefinition Height="37"/>
+                    <RowDefinition Height="37"/>
+                    <RowDefinition Height="37"/>
+                    <RowDefinition Height="37"/>
+                    <RowDefinition Height="37"/>
+                </Grid.RowDefinitions>
+
+                <Border Background="Black">
+                    <Grid>
+                        <TextBlock FontSize="15pt" FontFamily="Arial" Foreground="#FFC800" Text="Address" Margin="20,0,0,0"/>
+                        <ComboBox Name="cbAddresses" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" Width="220" />
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1" Background="#28609E" Margin="0,2,0,2">
+                    <TextBlock Name="tbCompanyName" Foreground="White" FontFamily="Arial" FontSize="12pt" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" />
+                </Border>
+                
+                <Border Grid.Row="2" Background="#28609E" Margin="0,2,0,2">
+                    <TextBlock Name="tbAddress1" Foreground="White" FontFamily="Arial" FontSize="12pt" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" />
+                </Border>
+
+                <Border Grid.Row="3" Background="#28609E" Margin="0,2,0,2">
+                    <TextBlock Name="tbAddress2" Foreground="White" FontFamily="Arial" FontSize="12pt" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                </Border>
+
+                <Border Grid.Row="4" Background="#28609E" Margin="0,2,0,2">
+                    <TextBlock Name="tbAddress3" Foreground="White" FontFamily="Arial" FontSize="12pt" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" />
+                </Border>
+
+                <Border Grid.Row="5" Background="#28609E" Margin="0,2,0,2">
+                    <TextBlock Name="tbAddress4" Foreground="White" FontFamily="Arial" FontSize="12pt" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                </Border>
+
+                <Border Grid.Row="6" Background="#28609E" Margin="0,2,0,2">
+                    <TextBlock Name="tbAddress5" Foreground="White" FontFamily="Arial" FontSize="12pt" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                </Border>
+
+            </Grid>
+
+            <Border Grid.Column="1" Background="#2c834a" CornerRadius="17" Width="260" Height="33.22" VerticalAlignment="Top" Margin="20,30,20,0">
+                <Grid>
+                    <TextBlock FontSize="14pt" Foreground="White" Text="Include Miles" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" />
+                    <Button Name="cmdIncludeMiles" Content="Yes" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0" Style="{StaticResource buttonYesNoStyle}" Click="cmdIncludeMiles_Click"/>
+                </Grid>
+            </Border>
+
+            <ScrollViewer Grid.Column="2" Margin="0,20,10,0" VerticalScrollBarVisibility="Auto" Height="300">
+            <local:PaymentGrid x:Name="paymentGrid" />
+            </ScrollViewer>
+
+        </Grid>
+        
+        
+    </Grid>
+</UserControl>

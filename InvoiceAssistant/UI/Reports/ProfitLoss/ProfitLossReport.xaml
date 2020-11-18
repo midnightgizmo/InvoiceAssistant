@@ -1,0 +1,146 @@
+﻿<UserControl x:Class="InvoiceAssistant.UI.Reports.ProfitLoss.ProfitLossReport"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="900">
+
+
+    <UserControl.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\..\Templates\DropDownList.xaml" />
+
+                <ResourceDictionary>
+                    <Style x:Key="buttonBackStyle" TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="#186C9D">
+                                        <Canvas Width="49.9769" Height="49.9769">
+                                            <Path x:Name="pathBorder" Width="49.9769" Height="49.9769" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" StrokeThickness="4" StrokeLineJoin="Round" Stroke="#FFFFFFFF" Data="F1 M 24.9884,2C 37.6846,2 47.9769,12.2924 47.9769,24.9885C 47.9769,37.6847 37.6847,47.9769 24.9884,47.9769C 12.2922,47.9769 2,37.6847 2,24.9885C 2,12.2924 12.2924,2 24.9884,2 Z "/>
+                                            <Path x:Name="pathArrow" Width="35.3109" Height="33.4685" Canvas.Left="8.07806" Canvas.Top="7.75913" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 23.6881,40.9795C 24.6719,41.1987 25.6556,41.418 26.585,40.9528C 27.5144,40.4877 28.3893,39.3383 28.8241,38.5668C 29.2592,37.7953 29.254,37.4019 29.2566,36.954C 29.2592,36.5061 29.2695,36.0039 29.2213,35.5371C 29.1729,35.0703 29.0658,34.6388 28.9589,34.2074L 24.4232,29.299L 40.1166,29.2783C 40.7723,29.0988 41.4281,28.9193 41.9667,28.3533C 42.5052,27.7872 42.9263,26.8345 43.3475,25.8819L 43.3889,22.9617C 42.9781,22.097 42.5674,21.2323 42.0073,20.7017C 41.4473,20.171 40.7378,19.9742 40.0284,19.7776L 24.3716,19.7153L 28.985,14.7396C 29.3369,13.6869 29.689,12.6341 29.1936,11.395C 28.6981,10.1558 27.3556,8.73022 26.3518,8.13477C 25.3483,7.53931 24.6838,7.77405 24.0194,8.00867L 8.54895,22.713C 8.32068,23.2311 8.09265,23.7494 8.07874,24.2949C 8.06494,24.8401 8.2655,25.4128 8.46606,25.9854L 23.6881,40.9795 Z "/>
+                                        </Canvas>
+                                    </Border>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="pathBorder" Property="Stroke" Value="Yellow" />
+                                            <Setter TargetName="pathArrow" Property="Fill" Value="Yellow" />
+                                        </Trigger>
+
+
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter  TargetName="pathBorder" Property="Stroke" Value="#E7E7E7" />
+                                            <Setter  TargetName="pathArrow" Property="Fill" Value="#E7E7E7" />
+                                        </Trigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+
+                </ResourceDictionary>
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+
+
+
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="76" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#186C9D">
+            <Grid>
+                <Button Name="cmdBack" Content="Reports Menu" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Style="{StaticResource buttonBackStyle}" Click="cmdBack_Click" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Margin="0,0,0,0" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Arial" FontSize="18" FontWeight="Bold">Profit / Loss Report</TextBlock>
+
+
+                    <Canvas  Margin="20,0,20,0" Width="65.106" Height="54.3503">
+                        <Path Width="7.60834" Height="8.36255" Canvas.Left="51.1058" Canvas.Top="37.1675" Stretch="Fill" Fill="#FFFF0000" Data="F1 M 58.7141,45.53L 57.9825,37.1675L 51.1058,41.9822L 58.7141,45.53 Z "/>
+                        <Viewbox Width="65.106" Height="54.3503" Canvas.Left="0" Canvas.Top="0">
+                            <Canvas Width="65.106" Height="54.3503">
+                                <Viewbox Width="65.106" Height="54.3503" Canvas.Left="0" Canvas.Top="0">
+                                    <Canvas Width="65.106" Height="54.3503">
+                                        <Path Width="7.27014" Height="8.39478" Canvas.Left="54.937" Canvas.Top="6.21655" Stretch="Fill" Fill="#FF00C800" Data="F1 M 62.2071,6.21655L 54.937,10.4138L 62.2071,14.6113L 62.2071,6.21655 Z "/>
+                                        <Path Width="65.1059" Height="54.3503" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" StrokeThickness="2" StrokeLineJoin="Round" Stroke="#FFD5D59E" Data="F1 M 1,1L 1,53.3501L 64.1059,53.3503"/>
+                                        <Path Width="64.1007" Height="1" Canvas.Left="0.499939" Canvas.Top="18.9683" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FFD5D59E" Data="F1 M 0.999939,19.4683L 64.1006,19.4683"/>
+                                        <Path Width="64.1008" Height="1" Canvas.Left="0.499756" Canvas.Top="35.8979" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FFD5D59E" Data="F1 M 0.999756,36.3979L 64.1005,36.3979"/>
+                                        <Path Width="58.8667" Height="42.7063" Canvas.Left="3.1167" Canvas.Top="8.50366" Stretch="Fill" StrokeThickness="5" StrokeLineJoin="Round" Stroke="#FF00C800" Data="F1 M 5.6167,48.71L 23.3157,32.5503L 35.6282,43.3237L 59.4834,11.0037"/>
+                                    </Canvas>
+                                </Viewbox>
+                                <Path Width="55.7885" Height="36.5503" Canvas.Left="2.34747" Canvas.Top="6.96436" Stretch="Fill" StrokeThickness="5" StrokeLineJoin="Round" Stroke="#FFFF0000" Data="F1 M 4.84747,9.46436L 22.5464,25.624L 34.8589,14.8506L 55.6359,41.0146"/>
+                            </Canvas>
+                        </Viewbox>
+                    </Canvas>
+
+
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.436803,-0.00131242" EndPoint="0.436803,1.00262">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="#FF065C9E" Offset="0"/>
+                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+
+        <Grid Grid.Row="1">
+            <Border Background="#002E49" Padding="10,10,10,10" Height="70" VerticalAlignment="Top">
+                <Grid>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Label Foreground="White" FontSize="20pt">Finacial Start Year</Label>
+                        <ComboBox Name="cbYear" Grid.Row="10" Grid.Column="1" FontSize="15pt" Margin="30 7 0 7" Style="{StaticResource cbSmallRoundedCornersStyle}" SelectionChanged="cbYear_SelectionChanged" >
+                            <ComboBoxItem>2013</ComboBoxItem>
+                            <ComboBoxItem>2014</ComboBoxItem>
+                            <ComboBoxItem>2015</ComboBoxItem>
+                            <ComboBoxItem>2016</ComboBoxItem>
+                            <ComboBoxItem>2017</ComboBoxItem>
+                            <ComboBoxItem>2018</ComboBoxItem>
+                            <ComboBoxItem>2019</ComboBoxItem>
+                            <ComboBoxItem>2020</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+
+                </Grid>
+            </Border>
+
+            <Border Margin="50,100,0,0" Background="#5F90BFFF" BorderBrush="White" BorderThickness="1" CornerRadius="10" Padding="10" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Grid>
+                    <StackPanel>
+                        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15pt"  Foreground="#FFB1FF00">
+                            <Run FontWeight="Bold">Total money recieved</Run>
+                            <LineBreak />
+                            <Run FontStyle="Italic">(Gross)</Run>
+                        </TextBlock>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                            <TextBlock Text="£" FontSize="15pt" />
+                            <TextBlock Name="tbGrossIncome" FontSize="15pt"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+
+        </Grid>
+        
+        
+    </Grid>
+</UserControl>

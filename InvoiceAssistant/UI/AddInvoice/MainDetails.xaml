@@ -1,0 +1,303 @@
+﻿<UserControl x:Class="InvoiceAssistant.UI.AddInvoice.MainDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Background="Transparent"
+             d:DesignHeight="550" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Templates\DropDownList.xaml" />
+                <ResourceDictionary>
+                    <Style  TargetType="TextBox">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TextBox">
+                                    <Border x:Name="myBorder"
+                            Background="{TemplateBinding Background}"                             
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="11">
+
+                                        <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"
+                                          Margin="10,0,0,0"/>
+
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                    
+                    <Style x:Key="buttonAddPaymentDetailsStyle" TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="theBorder" CornerRadius="6" Background="#4C90C3" BorderBrush="#FFFFFF" BorderThickness="1" Height="34"  >
+                                        <TextBlock x:Name="theText" Margin="10,0,0,0" Text="{TemplateBinding Content}"  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Kozuka Gothic Pr6N"  FontSize="15.8"  Foreground="#FFA67D" />
+                                    </Border>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="theText" Property="Foreground" Value="Yellow" />
+                                        </Trigger>
+
+
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter  TargetName="theBorder" Property="Background" Value="#162F5F" />
+                                            <Setter  TargetName="theBorder" Property="BorderBrush" Value="Yellow" />
+                                        </Trigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+
+                    <Style x:Key="buttonIncludeMilesStyle" TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="theBorder" CornerRadius="11" Background="White" BorderThickness="0" Height="35" Width="80"  >
+                                        <TextBlock x:Name="theText" Margin="10,0,0,0" Text="{TemplateBinding Content}"  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI"  FontSize="20"  Foreground="Black" />
+                                    </Border>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <!--<Setter TargetName="theText" Property="Foreground" Value="Yellow" />-->
+                                            <Setter  TargetName="theBorder" Property="Background" Value="#E3E3E3" />
+                                            
+                                        </Trigger>
+
+
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <!--<Setter  TargetName="theBorder" Property="Background" Value="#162F5F" />
+                                            <Setter  TargetName="theBorder" Property="BorderBrush" Value="Yellow" />-->
+                                            <Setter  TargetName="theBorder" Property="BorderBrush" Value="#006432" />
+                                            <Setter  TargetName="theBorder" Property="BorderThickness" Value="1" />
+                                            <Setter  TargetName="theBorder" Property="Background" Value="#BCD9B6" />
+                                        </Trigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="buttonAddInvoiceStyle" TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="theBorder" CornerRadius="8" Background="#C0461F" Padding="15,5,15,7" BorderBrush="White" BorderThickness="2">
+                                        <TextBlock x:Name="theText" Foreground="White" FontSize="20" FontStyle="Italic" HorizontalAlignment="Center" Text="{TemplateBinding Content}" />
+                                    </Border>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter  TargetName="theText" Property="Foreground" Value="Yellow" />
+                                        </Trigger>
+
+
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter  TargetName="theBorder" Property="Background" Value="#162F5F" />
+                                        </Trigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="styleCalendar" TargetType="{x:Type Calendar}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Calendar}">
+                                    <!-- Wrapping in ViewBox will enlarge calendar of that size.-->
+                                    <Viewbox Height="400"
+                         Width="400">
+                                        <CalendarItem x:Name="PART_CalendarItem"
+                                  Background="{TemplateBinding Background}"
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"/>
+                                    </Viewbox>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="buttonDeleteInvoiceStyle" TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="theBorder" CornerRadius="8" Background="#770909" BorderBrush="White" BorderThickness="1">
+                                        <StackPanel Orientation="Horizontal" Margin="0,2,0,2">
+                                            <TextBlock x:Name="theText" Text="{TemplateBinding Content}" Margin="10,0,10,0" FontSize="12" FontStyle="Italic" Foreground="White" />
+                                        </StackPanel>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter  TargetName="theText" Property="Foreground" Value="Yellow" />
+                                        </Trigger>
+
+
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter  TargetName="theBorder" Property="Background" Value="#162F5F" />
+                                        </Trigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+
+                    <Style x:Key="buttonNewInvoiceStyle" TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="theBorder" CornerRadius="8" Background="#4BBD20" BorderBrush="White" BorderThickness="1" Width="60" Height="20">
+                                        
+                                            <TextBlock x:Name="theText" Text="{TemplateBinding Content}" HorizontalAlignment="Center" FontSize="12" FontStyle="Italic" Foreground="White" />
+                                        
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter  TargetName="theText" Property="Foreground" Value="Yellow" />
+                                        </Trigger>
+
+
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter  TargetName="theBorder" Property="Background" Value="#277709" />
+                                        </Trigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+
+                    <!-- Print Button Style -->
+                    <Style x:Key="printButtonStyle" TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+
+                                        <Canvas Width="25.7891" Height="25.7896">
+                                            <Path x:Name="Part_Background" Width="25.7891" Height="25.7896" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF006DB2" Fill="#FF378DC3" Data="F1 M 12.8945,0.5C 19.7402,0.5 25.2891,6.04907 25.2891,12.8948C 25.2891,19.7402 19.7393,25.2896 12.8945,25.2896C 6.04883,25.2896 0.5,19.7402 0.5,12.8948C 0.5,6.04907 6.04883,0.5 12.8945,0.5 Z "/>
+                                            <Viewbox Width="17.3232" Height="15.4792" Canvas.Left="4.02148" Canvas.Top="4.50903">
+                                                <Canvas Width="17.3232" Height="15.4792">
+                                                    <Path Width="17.3232" Height="4.42969" Canvas.Left="0" Canvas.Top="3.92944" Stretch="Fill" Fill="#FFE7E7E7" Data="F1 M 0.395508,3.92944L 4.00195,3.92944L 4.00195,6.99243L 13.4697,6.99243L 13.4873,3.92944L 16.9287,3.92944C 17.1465,3.92944 17.3232,4.10645 17.3232,4.32471L 17.3232,7.96387C 17.3232,8.18213 17.1465,8.35913 16.9287,8.35913L 0.395508,8.35913C 0.176758,8.35913 0,8.18213 0,7.96387L 0,4.32471C 0,4.10645 0.176758,3.92944 0.395508,3.92944 Z "/>
+                                                    <Path Width="0.839844" Height="0.823242" Canvas.Left="15.4639" Canvas.Top="4.26709" Stretch="Fill" Fill="#FF9E9E9E" Data="F1 M 15.8838,4.26709C 16.1152,4.26709 16.3037,4.45142 16.3037,4.67871C 16.3037,4.90625 16.1152,5.09033 15.8838,5.09033C 15.6514,5.09033 15.4639,4.90625 15.4639,4.67871C 15.4639,4.45142 15.6514,4.26709 15.8838,4.26709 Z "/>
+                                                    <Path Width="0.839844" Height="0.823242" Canvas.Left="15.4717" Canvas.Top="5.64209" Stretch="Fill" Fill="#FF9E9E9E" Data="F1 M 15.8916,5.64209C 16.124,5.64209 16.3115,5.82642 16.3115,6.05371C 16.3115,6.28125 16.124,6.46533 15.8916,6.46533C 15.6602,6.46533 15.4717,6.28125 15.4717,6.05371C 15.4717,5.82642 15.6602,5.64209 15.8916,5.64209 Z "/>
+                                                    <Path Width="17.1914" Height="4.48022" Canvas.Left="0.112305" Canvas.Top="9.08667" Stretch="Fill" Fill="#FFD1D1D1" Data="F1 M 17.3037,9.08789L 17.3037,13.1719C 17.3037,13.3901 17.127,13.5669 16.9092,13.5669L 13.417,13.5669L 13.4082,11.5559L 3.93164,11.5476L 3.92285,13.5669L 0.506836,13.5669C 0.289063,13.5669 0.112305,13.3901 0.112305,13.1719L 0.112305,9.08667L 17.3037,9.08789 Z "/>
+                                                    <Rectangle x:Name="Part_PaperBottom" Width="8.2832" Height="3.40869" Canvas.Left="4.52051" Canvas.Top="12.0706" Stretch="Fill" Fill="#FFFFFFFF"/>
+                                                    <Rectangle x:Name="Part_ParperTop" Width="8.28223" Height="6.48804" Canvas.Left="4.55371" Canvas.Top="0" Stretch="Fill" Fill="#FFFFFFFF"/>
+                                                </Canvas>
+                                            </Viewbox>
+                                        </Canvas>
+                                    </Grid>
+
+                                    <ControlTemplate.Triggers>
+
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="Part_Background" Property="Fill" Value="#61A8D5"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="Part_ParperTop" Property="Fill" Value="Yellow"/>
+                                            <Setter TargetName="Part_PaperBottom" Property="Fill" Value="Yellow"/>
+                                        </Trigger>
+
+                                    </ControlTemplate.Triggers>
+
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+        
+
+
+
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Border Margin="0,0,0,10" Background="#79A833" CornerRadius="25">
+            <Border.Effect>
+                <BlurEffect Radius="25"/>
+            </Border.Effect>
+        </Border>
+        <TextBlock FontSize="36" Foreground="#FFC800" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10">Main Details</TextBlock>
+
+        <Border Grid.Row="1" Background="#1C6796" Padding="10,15,10,10" CornerRadius="17" Margin="0,0,0,10">
+            <StackPanel>
+                <Grid>
+                    <TextBlock FontSize="20" Foreground="White" Margin="0,0,0,5">Date</TextBlock>
+                    
+                    <Button Name="cmdNew" HorizontalAlignment="Right" Content="New" VerticalAlignment="Center" Margin="0,-15,120,0" Visibility="Hidden" Style="{StaticResource buttonNewInvoiceStyle}" Click="cmdNew_Click" />
+                    <Button Name="cmdDelete" HorizontalAlignment="Right" Content="Delete" VerticalAlignment="Center" Margin="0,-15,50,0" Visibility="Hidden" Style="{StaticResource buttonDeleteInvoiceStyle}" Click="cmdDelete_Click" />
+                    <Button Name="cmdPrint" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,-15,0,0" Visibility="Hidden" Style="{StaticResource printButtonStyle}" Click="cmdPrint_Click" />
+                    
+                </Grid>
+                <DatePicker Name="txtDate" FontSize="20" Margin="0,0,0,10" BorderThickness="0" CalendarStyle="{StaticResource styleCalendar}" TextBoxBase.TextChanged="txtDate_TextChanged">
+                    <DatePicker.Resources>
+                        <Style TargetType="{x:Type DatePickerTextBox}">
+                            <Setter Property="Control.Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <Border Background="White" CornerRadius="12,0,0,12" Padding="10,0,10,0">
+                                            <TextBox BorderThickness="0" x:Name="PART_TextBox" Text="{Binding Path=SelectedDate, StringFormat='dd MMM yyyy', RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+
+                <TextBlock FontSize="20" Foreground="White" Margin="0,0,0,5">Reference Number</TextBlock>
+                <TextBox Name="txtRefNumber" FontSize="20" Margin="0,0,0,10" TextChanged="txtRefNumber_TextChanged" />
+
+                <TextBlock FontSize="20" Foreground="White" Margin="0,0,0,5">Description</TextBlock>
+                <TextBox Name="txtDescription" FontSize="20" Margin="0,0,0,10" TextChanged="txtDescription_TextChanged" />
+
+                <TextBlock FontSize="20" Foreground="White" Margin="0,0,0,5">Invoice To</TextBlock>
+                <ComboBox Name="ddlInvoiceTo" FontSize="20" Margin="0,0,0,10" SelectionChanged="ddlInvoiceTo_SelectionChanged" />
+                
+                <TextBlock FontSize="20" Foreground="White" Margin="0,0,0,5">Number of Times visited</TextBlock>
+                <ComboBox Name="ddlNumberOfTimesVisited" FontSize="20" Margin="0,0,0,10" SelectedIndex="1">
+                    <ComboBoxItem>0</ComboBoxItem>
+                    <ComboBoxItem>1</ComboBoxItem>
+                    <ComboBoxItem>2</ComboBoxItem>
+                    <ComboBoxItem>3</ComboBoxItem>
+                    <ComboBoxItem>4</ComboBoxItem>
+                    <ComboBoxItem>5</ComboBoxItem>
+                    <ComboBoxItem>6</ComboBoxItem>
+                    <ComboBoxItem>7</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="2" Background="#AB2D75A2" CornerRadius="17" Margin="0,0,0,20">
+            <Grid>
+                <TextBlock FontSize="20" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,10,10,10">Include Miles?</TextBlock>
+                <Button Name="cmdIncludeMiles"  Content="Yes" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,15,0"  Style="{StaticResource buttonIncludeMilesStyle}" Click="cmdIncludeMiles_Click"/>
+            </Grid>
+        </Border>
+
+        <Button Name="cmdAddInvoice" Grid.Row="3" Content="Add Invoice" Style="{StaticResource buttonAddInvoiceStyle}" Click="cmdAddInvoice_Click"  />
+        
+    </Grid>
+</UserControl>
