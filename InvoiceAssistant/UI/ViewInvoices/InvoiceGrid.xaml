@@ -76,8 +76,11 @@
             <Line Grid.Column="7" />
             
         </Grid>
-        <StackPanel Name="spGrid" Grid.Row="1">
-            
-        </StackPanel>
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Name="spGrid" Grid.Row="1">
+
+            </StackPanel>
+        </ScrollViewer>
+        
     </Grid>
 </UserControl>
